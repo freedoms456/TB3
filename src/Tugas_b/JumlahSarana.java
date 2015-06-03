@@ -5,6 +5,9 @@
  */
 package Tugas_b;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 /**
@@ -121,7 +124,7 @@ public class JumlahSarana implements InterfaceSarana{
         
     }
     @Override
-          public int AC(){
+        public int AC(){
               input= new Scanner (System.in);
         System.out.println("Input Jumlah AC:");
         setAC(input.nextInt());
@@ -135,6 +138,25 @@ public class JumlahSarana implements InterfaceSarana{
         return 0;
               
           }
+        void Save(){
+        String namafile = "Jumlah.txt";
+		try{
+			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
+			os.writeObject("StopKontak "+getStopKontak());
+                        os.writeObject("Kabel LCD "+getKabelLCD());
+                        os.writeObject("Kipas Angin "+getKipasAngin());
+                          os.writeObject("CCTV "+getCCTV());
+                            os.writeObject("AC "+getAC());
+			
+			os.close();
+		}
+		catch(FileNotFoundException e){
+			e.printStackTrace();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
     
     
     

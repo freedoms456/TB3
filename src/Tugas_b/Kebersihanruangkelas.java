@@ -19,6 +19,9 @@ public class Kebersihanruangkelas extends kelasabstrak{
     Scanner input;
     int SirkulasiUdara;
        int NilaiPencahayaan;
+        int Kelembapan;
+       int Suhu;
+       int HasilKebersihan;
 
     public int getSirkulasiUdara() {
         return SirkulasiUdara;
@@ -59,9 +62,7 @@ public class Kebersihanruangkelas extends kelasabstrak{
     public void setHasilKebersihan(int HasilKebersihan) {
         this.HasilKebersihan = HasilKebersihan;
     }
-       int Kelembapan;
-       int Suhu;
-       int HasilKebersihan;
+      
     
     public void Input(){
         input= new Scanner (System.in);
@@ -88,10 +89,17 @@ public class Kebersihanruangkelas extends kelasabstrak{
         System.out.println("Kebersihan kelas memiliki ");Analisis();
     }
     void Save(){
-        String namafile = "kipahsAngin.txt";
+        String namafile = "Kebersihan.txt";
 		try{
+                  
+     
+    
 			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
-			os.writeObject("Nilai Kebersihan (dari 12): "+getHasilKebersihan() );
+			os.writeObject("SirkulasiUdara: "+getSirkulasiUdara() );
+                        os.writeObject("NilaiPencahayaan): "+getNilaiPencahayaan() );
+                        os.writeObject("Kelembapan: "+getKelembapan() );
+                        os.writeObject("Suhu: "+getSuhu() );
+                        os.writeObject("Nilai Kebersihan (dari 12): "+getHasilKebersihan() );
 			
 			os.close();
 		}

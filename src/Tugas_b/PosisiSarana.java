@@ -5,6 +5,9 @@
  */
 package Tugas_b;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 /**
@@ -138,6 +141,24 @@ public class PosisiSarana implements InterfaceSarana{
               
           }
     
-    
+        void Save(){
+        String namafile = "PosisiSarana.txt";
+		try{
+			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
+			os.writeObject("StopKontak "+getStopKontak());
+                        os.writeObject("Kabel LCD "+getKabelLCD());
+                        os.writeObject("Kipas Angin "+getKipasAngin());
+                          os.writeObject("CCTV "+getCCTV());
+                            os.writeObject("AC "+getAC());
+			
+			os.close();
+		}
+		catch(FileNotFoundException e){
+			e.printStackTrace();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
     
 }

@@ -80,9 +80,13 @@ int HasilKeamanan;
     
     void Save(){
         String namafile = "Keamanan.txt";
+     
 		try{
 			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
-			os.writeObject("Nilai : "+getHasilKeamanan());
+			os.writeObject("Kekokohan "+getKekokohan());
+                        os.writeObject("Kuncipintudanjendela "+getKuncipintudanjendela());
+                        os.writeObject("Bahaya "+getBahaya());
+                        
 			
 			os.close();
 		}

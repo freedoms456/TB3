@@ -109,10 +109,17 @@ public class Kenyamananruangkelas {
     }
    
     void Save(){
-        String namafile = "kipasAngin.txt";
+        String namafile = "kenyamanan.txt";
 		try{
+                   
+    
 			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
 			os.writeObject("kenyamanan =  "+Analisis());
+                        os.writeObject("Kebisingan =  "+getKebisingan());
+                        os.writeObject("Bau =  "+getBau());
+                        os.writeObject("Kebocoran =  "+getKebocoran());
+                        os.writeObject("Kerusakan =  "+getKerusakan());
+                         os.writeObject("Keausan =  "+getKeausan());
 			
 			os.close();
 		}

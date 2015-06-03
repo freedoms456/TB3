@@ -103,9 +103,15 @@ public class Lingkunganruangkelas extends kelasabstrak{
     }
     void Save(){
         String namafile = "Lingkungan.txt";
+      
 		try{
 			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
-			os.writeObject("kondisi Kelas : "+Analisis());
+			os.writeObject("KondisiAtap : "+getKondisiAtap());
+                        os.writeObject("KondisiDinding : "+getKondisiDinding());
+                        os.writeObject("KondisiPintu : "+getKondisiPintu());
+                        os.writeObject("KondisiJendela : "+getKondisiJendela());
+                        os.writeObject("kondisi Lantai : "+getKondisiLantai());
+                       
 			
 			os.close();
 		}
