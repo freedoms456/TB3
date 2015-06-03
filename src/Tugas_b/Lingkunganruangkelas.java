@@ -5,14 +5,17 @@
  */
 package Tugas_b;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 /**
  *
  * @author eL
  */
-public abstract class Lingkunganruangkelas extends kelasabstrak{
+public class Lingkunganruangkelas extends kelasabstrak{
     Scanner input;
     
     int KondisiLantai;
@@ -72,38 +75,45 @@ public abstract class Lingkunganruangkelas extends kelasabstrak{
        
        
     
-    public void input(){
+    public void Input(){
         
     input = new Scanner (System.in);
-    System.out.println("pilih Kondisi Lantai : 1.Rusak 2.Sedang 3.Baik");
+    System.out.println("pilih Kondisi Lantai : 1.Kotor 2.Sedang 3.Bersih");
      setKondisiLantai(input.nextInt())  ;
-    System.out.println("pilih Kondisi Dinding : 1.Rusak 2.Sedang 3.Baik");
+    System.out.println("pilih Kondisi Dinding : 1.Kotor 2.Sedang 3.Bersih");
      setKondisiDinding(input.nextInt())  ;
-    System.out.println("pilih Kondisi Atap : 1.Rusak 2.Sedang 3.Baik");
+    System.out.println("pilih Kondisi Atap : 1.Kotor 2.Sedang 3.Bersih");
      setKondisiAtap(input.nextInt())  ;
-    System.out.println("pilih Kondisi Pintu : 1.Rusak 2.Sedang 3.Baik");
+    System.out.println("pilih Kondisi Pintu : 1.Kotor 2.Sedang 3.Bersih");
      setKondisiPintu(input.nextInt())  ;
-    System.out.println("pilih Kondisi Jendela : 1.Rusak 2.Sedang 3.Baik");
+    System.out.println("pilih Kondisi Jendela : 1.Kotor 2.Sedang 3.Bersih");
     }
     int Analisis(){
          setHasilLingkungan(  getKondisiLantai()+  getKondisiDinding()+  getKondisiAtap()+  getKondisiPintu()+  getKondisiJendela());
         if(  getHasilLingkungan()>9){
-            System.out.println("Lingkungan kelas yang Baik ");
+            System.out.println("Lingkungan kelas = Baik  ");
         }
         else{
-            System.out.println("Lingkungan kelas yang buruk");
+            System.out.println("Lingkungan kelas =buruk");
             }
-        return 1;
+        return 0;
     }
     void Output(){
-        System.out.println("Kondisi kelas: "+ Analisis());
+       Analisis();
     }
     void Save(){
-        try{
-            FileWriter a = new FileWriter("Lingkungan.txt");
-             a.write("Kondisi kelas: " + Analisis());
-        }catch(Exception a){
-             a.printStackTrace();
-        }
+        String namafile = "Lingkungan.txt";
+		try{
+			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
+			os.writeObject("kondisi Kelas : "+Analisis());
+			
+			os.close();
+		}
+		catch(FileNotFoundException e){
+			e.printStackTrace();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+	
+                }}
     }
-}

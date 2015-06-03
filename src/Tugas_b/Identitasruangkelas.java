@@ -5,7 +5,10 @@
  */
 package Tugas_b;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 /**
  *
@@ -66,15 +69,25 @@ public class Identitasruangkelas extends kelasabstrak{
     
     @Override
     void Output(){
-        System.out.println("Kondisi kelas: " + Analisis());
+    Analisis();
         
     }
     void Save(){
-        try{
-            FileWriter l = new FileWriter("Identitas.txt");
-            l.write("Kondisi " + Analisis());
-        }catch(Exception l){
-            l.printStackTrace();
-        }
+        String namafile = "Identitas.txt";
+		try{
+			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
+			os.writeObject("Nama Ruang "+getNamaRuang());
+                        os.writeObject("GKB "+getLokasiRuang());
+                        os.writeObject("Fakultas "+getFakultas());
+			
+			os.close();
+		}
+		catch(FileNotFoundException e){
+			e.printStackTrace();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
     }
-}
+

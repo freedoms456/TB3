@@ -5,14 +5,17 @@
  */
 package Tugas_b;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 /**
  *
  * @author eL
  */
-public class Keamananruangkelas {
+public class Keamananruangkelas extends kelasabstrak{
     Scanner input;
   
     int Kekokohan;
@@ -68,14 +71,26 @@ int HasilKeamanan;
         else{
         System.out.println("Keamanan kelas yang buruk");
         }   
-        return 1;
+        return 0;
     }
+    void Output(){
+        System.out.println("Kelasi ini memiliki");
+        Analisis();
+    }
+    
     void Save(){
-        try{
-            FileWriter a = new FileWriter("Keamanan.txt");
-             a.write("Kondisi kelas: " + Analisis());
-        }catch(Exception a){
-             a.printStackTrace();
-        }
-    }
+        String namafile = "Keamanan.txt";
+		try{
+			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
+			os.writeObject("Nilai : "+getHasilKeamanan());
+			
+			os.close();
+		}
+		catch(FileNotFoundException e){
+			e.printStackTrace();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
 }

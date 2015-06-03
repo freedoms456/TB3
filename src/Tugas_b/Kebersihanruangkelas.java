@@ -5,7 +5,10 @@
  */
 package Tugas_b;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 /**
@@ -64,11 +67,11 @@ public class Kebersihanruangkelas extends kelasabstrak{
         input= new Scanner (System.in);
         System.out.println("pilih Sirkulasi Udara: 1.tersendat 2.Sedang 3.lancar");
          setSirkulasiUdara(input.nextInt())  ;
-        System.out.println("pilih Nilai Pencahayaan: 1.gelap 2.remang 3.terang");
+        System.out.println("pilih Nilai Pencahayaan: 1.<250 2.249<x<351");
          setNilaiPencahayaan(input.nextInt())  ;
-        System.out.println("pilih Kelembapan(%) : 1.Rusak 2.Sedang 3.Baik");
+        System.out.println("pilih Kelembapan(%) : 1.<70 atau >80 2.69<x<81");
          setKelembapan(input.nextInt())  ;
-        System.out.println("pilih Suhu(celcius) : 1.1-19 C 2.>27 C 3.20-27 C");
+        System.out.println("pilih Suhu(celcius) : 1.1-19 C 2.>35 C 3.25-35 C");
          setSuhu(input.nextInt())  ;
 }
     int Analisis(){
@@ -79,18 +82,24 @@ public class Kebersihanruangkelas extends kelasabstrak{
         else{
             System.out.println("Kebersihan kelas yang Buruk");
         }
-        return 1;
+        return 0;
     }
     void Output(){
-        System.out.println("Kondisi kelas: "+ Analisis());
+        System.out.println("Kebersihan kelas memiliki ");Analisis();
     }
     void Save(){
-        try{
-            FileWriter a = new FileWriter("Kebersihan.txt");
-             a.write("Kondisi kelas: " + Analisis());
-        }catch(Exception a){
-         a.printStackTrace();
-
-        }
+        String namafile = "kipahsAngin.txt";
+		try{
+			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
+			os.writeObject("Nilai Kebersihan (dari 12): "+getHasilKebersihan() );
+			
+			os.close();
+		}
+		catch(FileNotFoundException e){
+			e.printStackTrace();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
     }
 }

@@ -5,14 +5,17 @@
  */
 package Tugas_b;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 /**
  *
  * @author eL
  */
-public abstract class Kondisiruangkelas extends kelasabstrak{
+public class Kondisiruangkelas extends kelasabstrak{
     Scanner input;
   
      int JumlahPintu;
@@ -69,40 +72,80 @@ public abstract class Kondisiruangkelas extends kelasabstrak{
     public void setJumlahKursi(int JumlahKursi) {
         this.JumlahKursi = JumlahKursi;
     }
-       
+       int Luas;
     public void Input(){
         input = new Scanner (System.in);
        
-    System.out.println("Pilih Panjang Ruang :1.0-2m 2.2-3m 3.>3m  ");
+    System.out.println("Input Panjang Ruang:");
      setPanjangRuang(input.nextInt());
-    System.out.println("Pilih Lebar Ruang:1.0-1m 2.1-2m 3.>2m  ");
+    System.out.println("Input Lebar Ruang ");
      setLebarRuang(input.nextInt()); 
-    System.out.println("Pilih Jumlah Kursi:1.0-10 2.10-25 3.>25  ");
+    System.out.println("Input Jumlah Kursi");
      setJumlahKursi(input.nextInt());
-    System.out.println("Pilih Jumlah Pintu : 1.0 2.1 ");
+    System.out.println("Input jumlah Pintu :1.1 pintu 2.2pintu");
      setJumlahPintu(input.nextInt());
-    System.out.println("Pilih Jumlah Jendela : 1.0-1 2.2-3 3.>3 ");
+    System.out.println("Input Jumlah jendela :1.tidak ada 2.1");
      setJumlahJendela(input.nextInt()); 
     }
     int Analisis(){
-         setHasilKondisi(   getJumlahJendela()+  getPanjangRuang()+  getLebarRuang()+  getJumlahKursi()+  getJumlahPintu());
-        if(  getHasilKondisi() >8){
-        System.out.println("Kondisi kelas yang Baik");
+        if(getPanjangRuang() != getLebarRuang()){
+            System.out.println("Ruangan ini berbentuk Persegi panjang dengan: ");
+            Luas = getLebarRuang()*getPanjangRuang();
+            System.out.println("Luas ="+Luas);
+            
+            
+        }
+        else{System.out.println("Ruangan ini tidak berbentuk Persegi panjang dengan: ");
+            Luas = getLebarRuang()*getPanjangRuang();
+            System.out.println("Luas ="+Luas);
+            
+        }
+        double Rasio;
+        Rasio = Luas/getJumlahKursi();
+        System.out.println("Rasio="+Rasio);
+        
+        if(Rasio >= 0.5){
+            System.out.println("Rasio = Sesuai");   
+        }
+        else{
+            System.out.println("Rasio = Tidak Sesuai");
+        }
+       
+        
+        if(  getJumlahJendela() >1){
+        System.out.println("Jumlah jendela Sesuai");
         return 1;
-    }else{
-        System.out.println("Kondisi kelas yang Buruk");
+    }else {
+        System.out.println("Jumlah Jendela tidak Sesuai");
     }
+        if(getJumlahPintu() > 1){
+            System.out.println("Jumlah Pintu Sesuai");
+            
+        }
+        else{
+            System.out.println("Jumlah Pintu Tidak Sesuai");
+        }
         return 0;
     }
     void Output(){
-        System.out.println("Kondisi kelas: "+ Analisis());
+        Analisis();
     }
     void Save(){
-        try{
-            FileWriter a = new FileWriter("Ruangkelas.txt");
-             a.write("Kondisi kelas: " + Analisis());
-        }catch(Exception a){
-             a.printStackTrace();
-        }
+      String namafile = "kondisikelas.txt";
+		try{
+			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
+			os.writeObject("panjang kelas : "+getPanjangRuang());
+			os.writeObject("lebar kelas : "+getLebarRuang());
+			os.writeObject("jumlah kursi : "+getJumlahKursi());
+			os.writeObject("jumlah pintu : "+getJumlahPintu());
+			os.writeObject("jumlah jendela : "+getJumlahJendela());
+			os.close();
+		}
+		catch(FileNotFoundException e){
+			e.printStackTrace();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
     }
 }

@@ -5,9 +5,12 @@
  */
 package Tugas_b;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 /**
  *
@@ -76,15 +79,15 @@ public class Kenyamananruangkelas {
     
     void Input(){
         input= new Scanner (System.in);
-        System.out.println("pilih Kebisingan: 1.Rusak 2.Sedang 3.Baik");
+        System.out.println("pilih Kebisingan: 1.Ribut 2.Tenang");
         setKebisingan(input.nextInt())  ;
-        System.out.println("pilih Tingkat Kebauan: 1.Rusak 2.Sedang 3.Baik");
+        System.out.println("pilih Tingkat Kebauan: 1.Bau 2.Netral 3.Wangi");
         setBau(input.nextInt())  ;
-        System.out.println("pilih Kebocoran : 1.Rusak 2.Sedang 3.Baik");
+        System.out.println("pilih Kebocoran : 1.parah 2.sedikit 3.tidak bocor");
         setKebocoran(input.nextInt())  ;
-        System.out.println("pilih Kerusakan : 1.Rusak 2.Sedang 3.Baik");
+        System.out.println("pilih Kerusakan : 1.Rusak 2.tidak Rusak");
         setKerusakan(input.nextInt())  ;
-        System.out.println("pilih Keausan : 1.Rusak 2.Sedang 3.Baik");
+        System.out.println("pilih Keausan : 1.Aus 2.tidak Aus");
         setKeausan(input.nextInt())  ;
     }
     int Analisis(){
@@ -95,22 +98,29 @@ public class Kenyamananruangkelas {
         else{
         System.out.println("Kenyamanankelas yang Buruk");
         }
-        return 1;
+        return 0;
     }
   
     public void Output(){
-        Input();
+        
         System.out.println("Memiliki : ");
         Analisis();
         
     }
    
     void Save(){
-        try{
-            FileWriter a = new FileWriter("Kenyamanan.txt");
-            a.write("Kondisi kelas: " + Analisis());
-        }catch(Exception a){
-            a.printStackTrace();
-        }
+        String namafile = "kipasAngin.txt";
+		try{
+			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
+			os.writeObject("kenyamanan =  "+Analisis());
+			
+			os.close();
+		}
+		catch(FileNotFoundException e){
+			e.printStackTrace();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
     }
 }

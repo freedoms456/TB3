@@ -15,14 +15,14 @@ public class Run  {
     
 		public static void main (String[] args){
 		
-                Identitasruangkelas  kelasAa = new Identitasruangkelas() ;
+                Jumlahkondisidanposisisarana  kelasAa = new Jumlahkondisidanposisisarana() ;
              
 		
 		
 		
 		
-                        kelasAa.Input();
-                        kelasAa.Output();
+                        kelasAa.AnalisisSarana();
+                        
                         
                        
                        
