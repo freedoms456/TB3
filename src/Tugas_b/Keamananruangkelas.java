@@ -5,9 +5,12 @@
  */
 package Tugas_b;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
@@ -79,7 +82,7 @@ int HasilKeamanan;
     }
     
     void Save(){
-        String namafile = "Keamanan.txt";
+        
      
 		try{
 			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
@@ -97,4 +100,24 @@ int HasilKeamanan;
 			e.printStackTrace();
 		}
 	}
+    String namafile = "Keamanan.txt";
+    void Load(){
+        try {
+           
+			ObjectInputStream b = new ObjectInputStream(new FileInputStream(namafile));
+			b.readObject();
+			System.out.println("kekokohan : "+getKekokohan());
+			System.out.println("KuncipintudanJendela : "+getKuncipintudanjendela());
+			System.out.println("Bahaya : "+getBahaya());
+                       
+                        
+			b.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+    }
 }

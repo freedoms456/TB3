@@ -5,8 +5,11 @@
  */
 package Tugas_b;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
@@ -142,7 +145,7 @@ public class PosisiSarana implements InterfaceSarana{
           }
     
         void Save(){
-        String namafile = "PosisiSarana.txt";
+        
 		try{
 			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
 			os.writeObject("StopKontak "+getStopKontak());
@@ -160,5 +163,27 @@ public class PosisiSarana implements InterfaceSarana{
 			e.printStackTrace();
 		}
 	}
+        String namafile = "PosisiSarana.txt";
+          void Load(){
+        try {
+           
+			ObjectInputStream b = new ObjectInputStream(new FileInputStream(namafile));
+			b.readObject();
+			System.out.println("StopKontak : "+getStopKontak());
+			System.out.println("KabelLCD : "+getKabelLCD());
+			System.out.println("KipasAngin : "+getKipasAngin());
+                                System.out.println("cctv : "+getCCTV());
+                                System.out.println("AC : "+getAC());
+                       
+                        
+			b.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+    }
     
 }

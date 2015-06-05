@@ -5,11 +5,13 @@
  */
 package Tugas_b;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
@@ -94,6 +96,7 @@ public class Kenyamananruangkelas {
         setHasilKenyamanan( getKebisingan()+ getBau()+ getKebocoran()+ getKerusakan() +  getKeausan());
         if( getHasilKenyamanan()>9){
         System.out.println("Kenyamanan kelas yang Baik");
+        return 1;
         }
         else{
         System.out.println("Kenyamanankelas yang Buruk");
@@ -107,21 +110,21 @@ public class Kenyamananruangkelas {
         Analisis();
         
     }
-   
+     String namafile = "kenyamanan.txt";
     void Save(){
-        String namafile = "kenyamanan.txt";
+      
 		try{
                    
     
-			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
-			os.writeObject("kenyamanan =  "+Analisis());
-                        os.writeObject("Kebisingan =  "+getKebisingan());
-                        os.writeObject("Bau =  "+getBau());
-                        os.writeObject("Kebocoran =  "+getKebocoran());
-                        os.writeObject("Kerusakan =  "+getKerusakan());
-                         os.writeObject("Keausan =  "+getKeausan());
+			ObjectOutputStream a = new ObjectOutputStream(new FileOutputStream(namafile));
+			a.writeObject("kenyamanan =  "+Analisis());
+                        a.writeObject("Kebisingan =  "+getKebisingan());
+                        a.writeObject("Bau =  "+getBau());
+                        a.writeObject("Kebocoran =  "+getKebocoran());
+                        a.writeObject("Kerusakan =  "+getKerusakan());
+                         a.writeObject("Keausan =  "+getKeausan());
 			
-			os.close();
+			a.close();
 		}
 		catch(FileNotFoundException e){
 			e.printStackTrace();
@@ -130,4 +133,25 @@ public class Kenyamananruangkelas {
 			e.printStackTrace();
 		}
     }
-}
+         void Load(){
+        try {
+           
+			ObjectInputStream b = new ObjectInputStream(new FileInputStream(namafile));
+			b.readObject();
+			System.out.println("kenyamanan : "+Analisis());
+			System.out.println("Kebisingan : "+getKebisingan());
+			System.out.println("Bau : "+getBau());
+                        System.out.println("Kebocoran ="+getKebocoran());
+                        System.out.println("Kerusakan ="+getKerusakan());
+                        System.out.println("Keausan="+getKeausan());
+			b.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+    }
+    }
+

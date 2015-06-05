@@ -5,9 +5,12 @@
  */
 package Tugas_b;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
@@ -131,7 +134,7 @@ public class Kondisiruangkelas extends kelasabstrak{
         Analisis();
     }
     void Save(){
-      String namafile = "kondisikelas.txt";
+      
 		try{
 			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
 			os.writeObject("panjang kelas : "+getPanjangRuang());
@@ -145,6 +148,28 @@ public class Kondisiruangkelas extends kelasabstrak{
 			e.printStackTrace();
 		}
 		catch(Exception e){
+			e.printStackTrace();
+		}
+    }
+    String namafile = "kondisikelas.txt";
+    void Load(){
+        try {
+           
+			ObjectInputStream b = new ObjectInputStream(new FileInputStream(namafile));
+			b.readObject();
+			System.out.println("Panjang Ruang : "+getPanjangRuang());
+			System.out.println("Lebar Kelas : "+getLebarRuang());
+			System.out.println("Jumlah Kursi: "+getJumlahKursi());
+                                System.out.println("Jumlah Pintu : "+getJumlahPintu());
+                                System.out.println("Jumlah Jendela : "+getJumlahJendela());
+                       
+                        
+			b.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
     }

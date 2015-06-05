@@ -5,9 +5,12 @@
  */
 package Tugas_b;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
@@ -102,7 +105,7 @@ public class Lingkunganruangkelas extends kelasabstrak{
        Analisis();
     }
     void Save(){
-        String namafile = "Lingkungan.txt";
+        
       
 		try{
 			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
@@ -122,4 +125,26 @@ public class Lingkunganruangkelas extends kelasabstrak{
 			e.printStackTrace();
 	
                 }}
+    String namafile = "Lingkungan.txt";
+     void Load(){
+        try {
+           
+			ObjectInputStream b = new ObjectInputStream(new FileInputStream(namafile));
+			b.readObject();
+			System.out.println("KondisiAtap: "+getKondisiAtap());
+			System.out.println("Kondisi Dinding : "+getKondisiDinding());
+			System.out.println("Kondisi Pintu: "+getKondisiPintu());
+                                System.out.println("KondisiJendela : "+getKondisiJendela());
+                                System.out.println("Kondisi Lantai : "+getKondisiLantai());
+                       
+                        
+			b.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+    }
     }

@@ -76,7 +76,7 @@ public class Identitasruangkelas extends kelasabstrak{
         String namafile = "Identitas.txt";
 		try{
 			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
-			os.writeObject("Nama Ruang "+getNamaRuang());
+			os.writeObject("Nama Ruang  "+getNamaRuang());
                         os.writeObject("GKB "+getLokasiRuang());
                         os.writeObject("Fakultas "+getFakultas());
 			
@@ -89,5 +89,6 @@ public class Identitasruangkelas extends kelasabstrak{
 			e.printStackTrace();
 		}
 	}
+    
     }
 

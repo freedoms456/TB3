@@ -36,7 +36,7 @@ public class Jumlahkondisidanposisisarana {
         this.SSID = SSID;
     }
     
-    public void AnalisisSarana(){
+    public int AnalisisSarana(){
         input= new Scanner (System.in);
         a.StopKontak();
         a.CCTV();
@@ -58,17 +58,21 @@ public class Jumlahkondisidanposisisarana {
         setSSID(input.nextInt());
         if(getSSID()>1){
             System.out.println("SSID sesuai");
-                    }
+                  return 1;  }
         else{
             System.out.println("SSID tidak Sesuai");
         }
+        
         System.out.println("Pilih BandWidth:");
         System.out.println("1.tidak Bisa Login 2.Bisa Login");
         setBandWidth(input.nextInt());
-        if(getBandWidth()>1)
+        
+        if(getBandWidth()>1){
             System.out.println("BandWidth Sesuai");
+        return 1;}
         else{
             System.out.println("BandWidth tak Sesuai");
+                return 0;
         }
         
     }

@@ -5,8 +5,11 @@
  */
 package Tugas_b;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
@@ -70,7 +73,7 @@ public class JumlahSarana implements InterfaceSarana{
         setCCTV(input.nextInt());
         if(getCCTV()==2){
             System.out.println("Jumlah CCTV Sesuai");
-            
+            return 1;
         }else{
              System.out.println("Jumlah CCTV Tidak Sesuai");
         }
@@ -85,7 +88,7 @@ public class JumlahSarana implements InterfaceSarana{
         setStopKontak(input.nextInt());
         if(getStopKontak()>4){
             System.out.println("Jumlah StopKontak Sesuai");
-            
+            return 1;
         }else{
              System.out.println("Jumlah StopKontak Tidak Sesuai");
         }
@@ -100,7 +103,7 @@ public class JumlahSarana implements InterfaceSarana{
         setKabelLCD(input.nextInt());
         if(getKabelLCD()>=1){
             System.out.println("Jumlah Kabel LCD Sesuai");
-            
+            return 1;
         }else{
              System.out.println("Jumlah Kabel LCD Tidak Sesuai");
         }
@@ -116,7 +119,7 @@ public class JumlahSarana implements InterfaceSarana{
         if(getKipasAngin()>=2){
             System.out.println("Jumlah Kipas Angin Sesuai");
             
-            
+            return 1;
         }else{
              System.out.println("Jumlah Kipas Angin Tidak Sesuai");
         }
@@ -131,7 +134,7 @@ public class JumlahSarana implements InterfaceSarana{
         if(getAC()==1){
             System.out.println("Jumlah AC Sesuai");
             
-            
+            return 1;
         }else{
              System.out.println("Jumlah AC Tidak Sesuai");
         }
@@ -139,7 +142,7 @@ public class JumlahSarana implements InterfaceSarana{
               
           }
         void Save(){
-        String namafile = "Jumlah.txt";
+       
 		try{
 			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(namafile));
 			os.writeObject("StopKontak "+getStopKontak());
@@ -157,6 +160,28 @@ public class JumlahSarana implements InterfaceSarana{
 			e.printStackTrace();
 		}
 	}
+        String namafile = "Jumlah.txt";
+    void Load(){
+        try {
+           
+			ObjectInputStream b = new ObjectInputStream(new FileInputStream(namafile));
+			b.readObject();
+			System.out.println("StopKontak : "+getStopKontak());
+			System.out.println("KabelLCD : "+getKabelLCD());
+			System.out.println("KipasAngin : "+getKipasAngin());
+                                System.out.println("cctv : "+getCCTV());
+                                System.out.println("AC : "+getAC());
+                       
+                        
+			b.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+    }
     
     
     

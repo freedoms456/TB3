@@ -5,9 +5,12 @@
  */
 package Tugas_b;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
@@ -89,7 +92,7 @@ public class Kebersihanruangkelas extends kelasabstrak{
         System.out.println("Kebersihan kelas memiliki ");Analisis();
     }
     void Save(){
-        String namafile = "Kebersihan.txt";
+        
 		try{
                   
      
@@ -99,7 +102,7 @@ public class Kebersihanruangkelas extends kelasabstrak{
                         os.writeObject("NilaiPencahayaan): "+getNilaiPencahayaan() );
                         os.writeObject("Kelembapan: "+getKelembapan() );
                         os.writeObject("Suhu: "+getSuhu() );
-                        os.writeObject("Nilai Kebersihan (dari 12): "+getHasilKebersihan() );
+                        
 			
 			os.close();
 		}
@@ -110,4 +113,26 @@ public class Kebersihanruangkelas extends kelasabstrak{
 			e.printStackTrace();
 		}
     }
+    String namafile = "Kebersihan.txt";
+    void Load(){
+        try {
+           
+			ObjectInputStream b = new ObjectInputStream(new FileInputStream(namafile));
+			b.readObject();
+			System.out.println("kenyamanan : "+Analisis());
+			System.out.println("Sirkulasi Udara : "+getSirkulasiUdara());
+			System.out.println("Nilai Pencahayaan : "+getNilaiPencahayaan());
+                        System.out.println("Kelembapan="+getKelembapan());
+                        System.out.println("Suhu ="+getSuhu());
+                        
+			b.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+    }
 }
+
