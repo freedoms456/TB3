@@ -29,12 +29,12 @@ public class Run  {
                 a.Output();
                 a.Save();
                 
-                    System.out.println("Kondisi Ruang kelas .");
+                 System.out.println("Kondisi Ruang kelas .");
                 b.Input();
                 b.Output();
                 b.Save();
                 
-                    System.out.println("Jumlah kondisi dan posisi sarana");
+                 System.out.println("Jumlah kondisi dan posisi sarana");
                 c.AnalisisSarana();
                
                     System.out.println("Lingkungan Ruang Kelas");

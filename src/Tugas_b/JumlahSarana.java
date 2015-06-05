@@ -64,11 +64,12 @@ public class JumlahSarana implements InterfaceSarana{
         this.StopKontak = StopKontak;
     }
     Scanner input;
-    
+    Overloading z = new Overloading();
     @Override
+    
     public int CCTV(){
-        input= new Scanner (System.in);
-        System.out.println("Input Jumlah CCTV:");
+     input= new Scanner (System.in);
+     z.input("Jumlah","CCTV");
        
         setCCTV(input.nextInt());
         if(getCCTV()==2){
@@ -83,6 +84,8 @@ public class JumlahSarana implements InterfaceSarana{
     @Override
       public int StopKontak(){
         input= new Scanner (System.in);
+        
+        z.input("Jumlah","Stop kontak");
         System.out.println("Input Jumlah StopKontak:");
        
         setStopKontak(input.nextInt());
@@ -99,6 +102,7 @@ public class JumlahSarana implements InterfaceSarana{
     @Override
           public int KabelLCD(){
         input= new Scanner (System.in);
+        z.input("Jumlah","Kabel LCD");
         System.out.println("Input Jumlah Kabel LCD:");
         setKabelLCD(input.nextInt());
         if(getKabelLCD()>=1){
@@ -113,6 +117,8 @@ public class JumlahSarana implements InterfaceSarana{
     @Override
             public int KipasAngin(){
         input= new Scanner (System.in);
+        z.input("Jumlah","Kipas angin");
+        
         System.out.println("Input Jumlah KipasAngin:");
       
         setKipasAngin(input.nextInt());
@@ -128,7 +134,8 @@ public class JumlahSarana implements InterfaceSarana{
     }
     @Override
         public int AC(){
-              input= new Scanner (System.in);
+        input= new Scanner (System.in);
+        z.input("Jumlah","AC");
         System.out.println("Input Jumlah AC:");
         setAC(input.nextInt());
         if(getAC()==1){

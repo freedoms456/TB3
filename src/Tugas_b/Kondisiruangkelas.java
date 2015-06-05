@@ -21,7 +21,7 @@ import java.util.Scanner;
 public class Kondisiruangkelas extends kelasabstrak{
     Scanner input;
   
-     int JumlahPintu;
+       int JumlahPintu;
        int JumlahJendela;
        int PanjangRuang;
        int LebarRuang;

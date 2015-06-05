@@ -64,15 +64,17 @@ public class KondisiSarana implements InterfaceSarana{
         this.StopKontak = StopKontak;
     }
     Scanner input;
-    
+    Overloading z = new Overloading();
     @Override
     public int CCTV(){
         input= new Scanner (System.in);
+        z.input("kondisi","CCTV");
         System.out.println("Pilih Kondisi CCTV:");
         System.out.println("1.Rusak 2.Baik");
         setCCTV(input.nextInt());
         if(getCCTV()>1){
             System.out.println("Kondisi CCTV Sesuai");
+            return 1;
             
         }else{
              System.out.println("Kondisi CCTV Tidak Sesuai");
@@ -80,14 +82,17 @@ public class KondisiSarana implements InterfaceSarana{
         return 0;
         
     }
+    
+    
     @Override
       public int StopKontak(){
         input= new Scanner (System.in);
-        System.out.println("Pilih Kondisi StopKontak:");
+        z.input("kondisi","stop kontak ");
         System.out.println("1.Rusak 2.Baik");
         setStopKontak(input.nextInt());
         if(getStopKontak()>1){
             System.out.println("Kondisi StopKontak Sesuai");
+            return 1;
             
         }else{
              System.out.println("Kondisi StopKontak Tidak Sesuai");
@@ -98,12 +103,14 @@ public class KondisiSarana implements InterfaceSarana{
       
     @Override
           public int KabelLCD(){
+          z.input("kondisi","Kabel LCD");
         input= new Scanner (System.in);
         System.out.println("Pilih Kondisi Kabel LCD:");
         System.out.println("1.Rusak 2.Baik");
         setKabelLCD(input.nextInt());
         if(getKabelLCD()>1){
             System.out.println("Kondisi Kabel LCD Sesuai");
+            return 1;
             
         }else{
              System.out.println("Kondisi Kabel LCD Tidak Sesuai");
@@ -113,13 +120,14 @@ public class KondisiSarana implements InterfaceSarana{
     }
     @Override
             public int KipasAngin(){
+            z.input("kondisi","Kipas angin");
         input= new Scanner (System.in);
         System.out.println("Pilih Kondisi KipasAngin:");
         System.out.println("1.Rusak  2.Baik");
         setKipasAngin(input.nextInt());
         if(getKipasAngin()>1){
             System.out.println("Kondisi Kipas Angin Sesuai");
-            
+            return 1;
             
         }else{
              System.out.println("Kondisi Kipas Angin Tidak Sesuai");
@@ -130,12 +138,13 @@ public class KondisiSarana implements InterfaceSarana{
     @Override
           public int AC(){
               input= new Scanner (System.in);
+              z.input("kondisi","AC");
         System.out.println("Pilih Kondisi AC:");
         System.out.println("1.Rusak  2.Baikr");
         setAC(input.nextInt());
         if(getAC()>1){
             System.out.println("Kondisi AC Sesuai");
-            
+            return 1;
             
         }else{
              System.out.println("Kondisi AC Tidak Sesuai");

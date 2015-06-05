@@ -64,15 +64,20 @@ public class PosisiSarana implements InterfaceSarana{
         this.StopKontak = StopKontak;
     }
     Scanner input;
-    
+    Overloading z = new Overloading();
     @Override
     public int CCTV(){
+             
         input= new Scanner (System.in);
+        
+        z.input("Posisi","CCTV");
+        
         System.out.println("Pilih Posisi CCTV:");
         System.out.println("1.Tengah 2.Depan atau Belakang");
         setCCTV(input.nextInt());
         if(getCCTV()>1){
             System.out.println("posisi CCTV Sesuai");
+            return 1;
             
         }else{
              System.out.println("Posisi CCTV Tidak Sesuai");
@@ -82,13 +87,17 @@ public class PosisiSarana implements InterfaceSarana{
     }
     @Override
       public int StopKontak(){
+          
         input= new Scanner (System.in);
+        
+        z.input("Posisi","Stop kontak");
+        
         System.out.println("Pilih Posisi StopKontak:");
         System.out.println("1.Belakang 2.DekatDosen");
         setStopKontak(input.nextInt());
         if(getStopKontak()>1){
             System.out.println("posisi StopKontak Sesuai");
-            
+            return 1;
         }else{
              System.out.println("Posisi StopKontak Tidak Sesuai");
         }
@@ -97,13 +106,15 @@ public class PosisiSarana implements InterfaceSarana{
     }
       
     @Override
-          public int KabelLCD(){
+        public int KabelLCD(){
         input= new Scanner (System.in);
-        System.out.println("Pilih Posisi Kabel LCD:");
+        
+        z.input("posisi","kabel lcd");
         System.out.println("1.Jauh dari Dosen 2.Dekat Dosen");
         setKabelLCD(input.nextInt());
         if(getKabelLCD()>1){
             System.out.println("posisi Kabel LCD Sesuai");
+            return 1;
             
         }else{
              System.out.println("Posisi Kabel LCD Tidak Sesuai");
@@ -112,13 +123,16 @@ public class PosisiSarana implements InterfaceSarana{
         
     }
     @Override
-            public int KipasAngin(){
+        public int KipasAngin(){
         input= new Scanner (System.in);
-        System.out.println("Pilih Posisi KipasAngin:");
+        
+        z.input("posisi","kipas angin");
         System.out.println("1.Bawah  2.Pelapon");
+        
         setKipasAngin(input.nextInt());
         if(getKipasAngin()>1){
             System.out.println("posisi Kipas Angin Sesuai");
+            return 1;
             
             
         }else{
@@ -130,11 +144,15 @@ public class PosisiSarana implements InterfaceSarana{
     @Override
           public int AC(){
               input= new Scanner (System.in);
+              
+              z.input("posisi","AC");
+              
         System.out.println("Pilih Posisi AC:");
         System.out.println("1.Depan  2.Dibelakang/Di pinggir");
         setAC(input.nextInt());
         if(getAC()>1){
             System.out.println("posisi AC Sesuai");
+            return 1;
             
             
         }else{
