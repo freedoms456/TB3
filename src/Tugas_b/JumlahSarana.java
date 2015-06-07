@@ -176,8 +176,8 @@ public class JumlahSarana implements InterfaceSarana{
 			System.out.println("StopKontak : "+getStopKontak());
 			System.out.println("KabelLCD : "+getKabelLCD());
 			System.out.println("KipasAngin : "+getKipasAngin());
-                                System.out.println("cctv : "+getCCTV());
-                                System.out.println("AC : "+getAC());
+                        System.out.println("cctv : "+getCCTV());
+                        System.out.println("AC : "+getAC());
                        
                         
 			b.close();

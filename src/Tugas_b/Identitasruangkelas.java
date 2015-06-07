@@ -50,11 +50,11 @@ public class Identitasruangkelas extends kelasabstrak{
        input = new Scanner (System.in);
      
        System.out.print("Masukkan Nama Ruang:");
-        setNamaRuang(input.nextInt());
+       setNamaRuang(input.nextInt());
        System.out.print("Lokasi Ruang Berada di GKB :");
-        setLokasiRuang(input.nextInt());
+       setLokasiRuang(input.nextInt());
        System.out.print("Input Fakultas :");
-        setFakultas(input.next());
+       setFakultas(input.next());
     
        }
     @Override
