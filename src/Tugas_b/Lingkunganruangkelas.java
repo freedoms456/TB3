@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,58 +22,58 @@ import java.util.Scanner;
 public class Lingkunganruangkelas extends kelasabstrak{
     Scanner input;
     
-    int KondisiLantai;
-       int KondisiDinding;
-       int KondisiAtap;
-       int KondisiPintu;
-       int KondisiJendela;
-       int HasilLingkungan;
+    String KondisiLantai;
+     String KondisiDinding;
+      String KondisiAtap;
+      String KondisiPintu;
+      String KondisiJendela;
+       String HasilLingkungan;
 
-    public int getKondisiLantai() {
+    public String getKondisiLantai() {
         return KondisiLantai;
     }
 
-    public void setKondisiLantai(int KondisiLantai) {
+    public void setKondisiLantai(String KondisiLantai) {
         this.KondisiLantai = KondisiLantai;
     }
 
-    public int getKondisiDinding() {
+    public String getKondisiDinding() {
         return KondisiDinding;
     }
 
-    public void setKondisiDinding(int KondisiDinding) {
+    public void setKondisiDinding(String KondisiDinding) {
         this.KondisiDinding = KondisiDinding;
     }
 
-    public int getKondisiAtap() {
+    public String getKondisiAtap() {
         return KondisiAtap;
     }
 
-    public void setKondisiAtap(int KondisiAtap) {
+    public void setKondisiAtap(String KondisiAtap) {
         this.KondisiAtap = KondisiAtap;
     }
 
-    public int getKondisiPintu() {
+    public String getKondisiPintu() {
         return KondisiPintu;
     }
 
-    public void setKondisiPintu(int KondisiPintu) {
+    public void setKondisiPintu(String KondisiPintu) {
         this.KondisiPintu = KondisiPintu;
     }
 
-    public int getKondisiJendela() {
+    public String getKondisiJendela() {
         return KondisiJendela;
     }
 
-    public void setKondisiJendela(int KondisiJendela) {
+    public void setKondisiJendela(String KondisiJendela) {
         this.KondisiJendela = KondisiJendela;
     }
 
-    public int getHasilLingkungan() {
+    public String getHasilLingkungan() {
         return HasilLingkungan;
     }
 
-    public void setHasilLingkungan(int HasilLingkungan) {
+    public void setHasilLingkungan(String HasilLingkungan) {
         this.HasilLingkungan = HasilLingkungan;
     }
        
@@ -81,26 +82,47 @@ public class Lingkunganruangkelas extends kelasabstrak{
     public void Input(){
         
     input = new Scanner (System.in);
-    System.out.println("pilih Kondisi Lantai : 1.Kotor 2.Sedang 3.Bersih");
-     setKondisiLantai(input.nextInt())  ;
-    System.out.println("pilih Kondisi Dinding : 1.Kotor 2.Sedang 3.Bersih");
-     setKondisiDinding(input.nextInt())  ;
-    System.out.println("pilih Kondisi Atap : 1.Kotor 2.Sedang 3.Bersih");
-     setKondisiAtap(input.nextInt())  ;
-    System.out.println("pilih Kondisi Pintu : 1.Kotor 2.Sedang 3.Bersih");
-     setKondisiPintu(input.nextInt())  ;
-    System.out.println("pilih Kondisi Jendela : 1.Kotor 2.Sedang 3.Bersih");
+    System.out.println("Input Kondisi Lantai");
+     setKondisiLantai(input.next())  ;
+    System.out.println("Input Kondisi Dinding : 1.Kotor 2.Sedang 3.Bersih");
+     setKondisiDinding(input.next())  ;
+    System.out.println("Input Kondisi Atap : 1.Kotor 2.Sedang 3.Bersih");
+     setKondisiAtap(input.next())  ;
+    System.out.println("Input Kondisi Pintu : 1.Kotor 2.Sedang 3.Bersih");
+     setKondisiPintu(input.next())  ;
+    System.out.println("Input Kondisi Jendela : 1.Kotor 2.Sedang 3.Bersih");
     }
+    @Override
     int Analisis(){
-         setHasilLingkungan(  getKondisiLantai()+  getKondisiDinding()+  getKondisiAtap()+  getKondisiPintu()+  getKondisiJendela());
-        if(  getHasilLingkungan()>9){
-            System.out.println("Lingkungan kelas = Baik  ");
+        if(getKondisiLantai().equals("Bersih")){
+             JOptionPane.showMessageDialog(null,"Kondisi Lantai Sesuai");
+             
+            
         }
         else{
-            System.out.println("Lingkungan kelas =buruk");
-            }
-        return 0;
-    }
+           JOptionPane.showMessageDialog(null,"Kondisi Lantai Tidak Sesuai"); 
+        }
+        if(getKondisiDinding().equals("Bersih")){
+            JOptionPane.showMessageDialog(null,"Kondisi Dinding Sesuai");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Kondisi Dinding tidak Sesuai");
+        }
+        if(getKondisiAtap().equals("Bersih")){
+            JOptionPane.showMessageDialog(null,"Kondisi Atap Sesuai");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Kondisi Atap tidak Sesuai");
+        }
+        if(getKondisiPintu().equals("Bersih")){
+            JOptionPane.showMessageDialog(null,"Kondisi Pintu Sesuai");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Kondisi Pintu tidak Sesuai");
+        }
+    return 1;}
+    
+    @Override
     void Output(){
        Analisis();
     }

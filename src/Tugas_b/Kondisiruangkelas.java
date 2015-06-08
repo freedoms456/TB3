@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -94,44 +95,45 @@ public class Kondisiruangkelas extends kelasabstrak{
         if(getPanjangRuang() != getLebarRuang()){
             System.out.println("Ruangan ini berbentuk Persegi panjang dengan: ");
             Luas = getLebarRuang()*getPanjangRuang();
-            System.out.println("Luas ="+Luas);
+           JOptionPane.showMessageDialog(null,"Luas ="+Luas);
             
             
         }
         else{System.out.println("Ruangan ini tidak berbentuk Persegi panjang dengan: ");
             Luas = getLebarRuang()*getPanjangRuang();
-            System.out.println("Luas ="+Luas);
+            JOptionPane.showMessageDialog(null,"Luas ="+Luas);
             
         }
         double Rasio;
         Rasio = Luas/getJumlahKursi();
-        System.out.println("Rasio="+Rasio);
+        JOptionPane.showMessageDialog(null,"Rasio="+Rasio);
         
         if(Rasio >= 0.5){
-            System.out.println("Rasio = Sesuai");   
+            JOptionPane.showMessageDialog(null,"Rasio = Sesuai");   
         }
         else{
-            System.out.println("Rasio = Tidak Sesuai");
+            JOptionPane.showMessageDialog(null,"Rasio = Tidak Sesuai");
         }
        
         
         if(  getJumlahJendela() >1){
-        System.out.println("Jumlah jendela Sesuai");
+        JOptionPane.showMessageDialog(null,"Jumlah jendela Sesuai");
         return 1;
     }else {
-        System.out.println("Jumlah Jendela tidak Sesuai");
+       JOptionPane.showMessageDialog(null,"Jumlah jendela tidak Sesuai");
     }
         if(getJumlahPintu() > 1){
-            System.out.println("Jumlah Pintu Sesuai");
+             JOptionPane.showMessageDialog(null,"Jumlah pintu Sesuai");
             
         }
         else{
-            System.out.println("Jumlah Pintu Tidak Sesuai");
+           JOptionPane.showMessageDialog(null,"Jumlah pintu tidak Sesuai");
         }
         return 0;
     }
     void Output(){
-        Analisis();
+       Analisis();
+   
     }
     void Save(){
       

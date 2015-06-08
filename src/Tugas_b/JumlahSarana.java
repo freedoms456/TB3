@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -72,14 +73,18 @@ public class JumlahSarana implements InterfaceSarana{
      z.input("Jumlah","CCTV");
        
         setCCTV(input.nextInt());
+        return 1;
+        
+    }
+    
+    public int aCCTV(){
         if(getCCTV()==2){
-            System.out.println("Jumlah CCTV Sesuai");
+            JOptionPane.showMessageDialog(null,"Jumlah CCTV  Sesuai ");
             return 1;
         }else{
-             System.out.println("Jumlah CCTV Tidak Sesuai");
+             JOptionPane.showMessageDialog(null,"Jumlah CCTV Tidak Sesuai ");
         }
         return 0;
-        
     }
     @Override
       public int StopKontak(){
@@ -88,16 +93,20 @@ public class JumlahSarana implements InterfaceSarana{
         z.input("Jumlah","Stop kontak");
         System.out.println("Input Jumlah StopKontak:");
        
-        setStopKontak(input.nextInt());
-        if(getStopKontak()>4){
-            System.out.println("Jumlah StopKontak Sesuai");
-            return 1;
-        }else{
-             System.out.println("Jumlah StopKontak Tidak Sesuai");
-        }
-        return 0;
+       return 1;
         
     }
+      
+      public int aStopKontak(){
+          
+        if(getStopKontak()>4){
+             JOptionPane.showMessageDialog(null,"Jumlah Stop Kontak Sesuai ");
+            return 1;
+        }else{
+              JOptionPane.showMessageDialog(null,"Jumlah Stop Kontak tidak  Sesuai ");
+        }
+        return 0;
+      }
       
     @Override
           public int KabelLCD(){
@@ -105,15 +114,18 @@ public class JumlahSarana implements InterfaceSarana{
         z.input("Jumlah","Kabel LCD");
         System.out.println("Input Jumlah Kabel LCD:");
         setKabelLCD(input.nextInt());
-        if(getKabelLCD()>=1){
-            System.out.println("Jumlah Kabel LCD Sesuai");
-            return 1;
-        }else{
-             System.out.println("Jumlah Kabel LCD Tidak Sesuai");
-        }
-        return 0;
+       return 1;
         
     }
+          public int aKabelLCD(){
+               if(getKabelLCD()>=1){
+            JOptionPane.showMessageDialog(null,"Jumlah KabelLCD  Sesuai ");
+            return 1;
+        }else{
+             JOptionPane.showMessageDialog(null,"Jumlah KabelLCD Tidak  Sesuai ");
+        }
+        return 0;
+          }
     @Override
             public int KipasAngin(){
         input= new Scanner (System.in);
@@ -122,32 +134,38 @@ public class JumlahSarana implements InterfaceSarana{
         System.out.println("Input Jumlah KipasAngin:");
       
         setKipasAngin(input.nextInt());
-        if(getKipasAngin()>=2){
-            System.out.println("Jumlah Kipas Angin Sesuai");
+       return 1;
+        
+    }
+            public int aKipasAngin(){
+                 if(getKipasAngin()>=2){
+             JOptionPane.showMessageDialog(null,"Jumlah Kipas Angin Sesuai ");
             
             return 1;
         }else{
-             System.out.println("Jumlah Kipas Angin Tidak Sesuai");
+              JOptionPane.showMessageDialog(null,"Jumlah Kipas Angin tidak  Sesuai ");
         }
         return 0;
-        
-    }
+            }
     @Override
         public int AC(){
         input= new Scanner (System.in);
         z.input("Jumlah","AC");
         System.out.println("Input Jumlah AC:");
         setAC(input.nextInt());
-        if(getAC()==1){
-            System.out.println("Jumlah AC Sesuai");
+      return 1;
+          }
+        public int aAC(){
+              if(getAC()==1){
+             JOptionPane.showMessageDialog(null,"Jumlah AC  Sesuai ");
             
             return 1;
         }else{
-             System.out.println("Jumlah AC Tidak Sesuai");
+              JOptionPane.showMessageDialog(null,"Jumlah AC tidak  Sesuai ");
         }
         return 0;
               
-          }
+        }
         void Save(){
        
 		try{
@@ -189,7 +207,13 @@ public class JumlahSarana implements InterfaceSarana{
 			e.printStackTrace();
 		}
     }
-    
+    void Analisis(){
+       aStopKontak();
+       aCCTV();
+       aKabelLCD();
+      aKipasAngin();
+        aAC();
+    }
     
     
 }

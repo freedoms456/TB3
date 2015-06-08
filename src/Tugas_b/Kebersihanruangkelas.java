@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,17 +21,17 @@ import java.util.Scanner;
  */
 public class Kebersihanruangkelas extends kelasabstrak{
     Scanner input;
-    int SirkulasiUdara;
-       int NilaiPencahayaan;
-        int Kelembapan;
+    String SirkulasiUdara;
+    int NilaiPencahayaan;
+      int  Kelembapan;
        int Suhu;
-       int HasilKebersihan;
+       
 
-    public int getSirkulasiUdara() {
+    public String getSirkulasiUdara() {
         return SirkulasiUdara;
     }
 
-    public void setSirkulasiUdara(int SirkulasiUdara) {
+    public void setSirkulasiUdara(String SirkulasiUdara) {
         this.SirkulasiUdara = SirkulasiUdara;
     }
 
@@ -58,38 +59,56 @@ public class Kebersihanruangkelas extends kelasabstrak{
         this.Suhu = Suhu;
     }
 
-    public int getHasilKebersihan() {
-        return HasilKebersihan;
-    }
 
-    public void setHasilKebersihan(int HasilKebersihan) {
-        this.HasilKebersihan = HasilKebersihan;
-    }
-      
     
     public void Input(){
         input= new Scanner (System.in);
-        System.out.println("pilih Sirkulasi Udara: 1.tersendat 2.Sedang 3.lancar");
-         setSirkulasiUdara(input.nextInt())  ;
-        System.out.println("pilih Nilai Pencahayaan: 1.<250 2.249<x<351");
+        System.out.println("Input Sirkulasi Udara: 1.tersendat 2.Sedang 3.lancar");
+         setSirkulasiUdara(input.next())  ;
+        System.out.println("Input Nilai Pencahayaan: 1.<250 2.249<x<351");
          setNilaiPencahayaan(input.nextInt())  ;
-        System.out.println("pilih Kelembapan(%) : 1.<70 atau >80 2.69<x<81");
+        System.out.println("Input Kelembapan(%) : 1.<70 atau >80 2.69<x<81");
          setKelembapan(input.nextInt())  ;
-        System.out.println("pilih Suhu(celcius) : 1.1-19 C 2.>35 C 3.25-35 C");
+        System.out.println("Input Suhu(celcius) : 1.1-19 C 2.>35 C 3.25-35 C");
          setSuhu(input.nextInt())  ;
 }
     int Analisis(){
-         setHasilKebersihan(  getSirkulasiUdara()+  getNilaiPencahayaan()+  getKelembapan()+  getSuhu());
-        if(  getHasilKebersihan()>9){
-        System.out.println("Kebersihan kelas yang Baik");
+        if(getSirkulasiUdara().equals("Lancar")){
+             JOptionPane.showMessageDialog(null,"Sirkulasi udara Sesuai");
+             
+            
         }
         else{
-            System.out.println("Kebersihan kelas yang Buruk");
+           JOptionPane.showMessageDialog(null,"Sirkulasi udara Sesuai"); 
         }
-        return 0;
+        if(getNilaiPencahayaan()>249 && getNilaiPencahayaan()<351){
+             JOptionPane.showMessageDialog(null,"Pencahayaan Baik");
+             
+            
+        }
+        else{
+           JOptionPane.showMessageDialog(null,"Pencahayaan tidak baik"); 
+        }
+        if(getKelembapan()>69 && getKelembapan()<81){
+             JOptionPane.showMessageDialog(null,"Kelembapan Sesuai");
+             
+            
+        }
+        else{
+           JOptionPane.showMessageDialog(null,"Kelembapan Tidak Sesuai"); 
+        }
+         if(getSuhu()>24&& getSuhu()<36){
+             JOptionPane.showMessageDialog(null,"Suhu Sesuai");
+             
+            
+        }
+        else{
+           JOptionPane.showMessageDialog(null,"Suhu Tidak Sesuai"); 
+        }
+       return 1; 
     }
     void Output(){
-        System.out.println("Kebersihan kelas memiliki ");Analisis();
+        Analisis();
     }
     void Save(){
         

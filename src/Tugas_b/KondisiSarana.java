@@ -12,55 +12,56 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author User
  */
 public class KondisiSarana implements InterfaceSarana{
-    int CCTV;
-    int KipasAngin;
-    int KabelLCD;
+    String CCTV;
+    String KipasAngin;
+    String KabelLCD;
 
-    public int getCCTV() {
+    public String getCCTV() {
         return CCTV;
     }
 
-    public void setCCTV(int CCTV) {
+    public void setCCTV(String CCTV) {
         this.CCTV = CCTV;
     }
 
-    public int getKipasAngin() {
+    public String getKipasAngin() {
         return KipasAngin;
     }
 
-    public void setKipasAngin(int KipasAngin) {
+    public void setKipasAngin(String KipasAngin) {
         this.KipasAngin = KipasAngin;
     }
 
-    public int getKabelLCD() {
+    public String getKabelLCD() {
         return KabelLCD;
     }
 
-    public void setKabelLCD(int KabelLCD) {
+    public void setKabelLCD(String KabelLCD) {
         this.KabelLCD = KabelLCD;
     }
 
-    public int getAC() {
+    public String getAC() {
         return AC;
     }
 
-    public void setAC(int AC) {
+    public void setAC(String AC) {
         this.AC = AC;
     }
-    int AC;
-    int StopKontak;
+    String AC;
+    String StopKontak;
 
-    public int getStopKontak() {
+    public String getStopKontak() {
         return StopKontak;
     }
 
-    public void setStopKontak(int StopKontak) {
+    public void setStopKontak(String StopKontak) {
         this.StopKontak = StopKontak;
     }
     Scanner input;
@@ -71,16 +72,19 @@ public class KondisiSarana implements InterfaceSarana{
         z.input("kondisi","CCTV");
         System.out.println("Pilih Kondisi CCTV:");
         System.out.println("1.Rusak 2.Baik");
-        setCCTV(input.nextInt());
-        if(getCCTV()>1){
-            System.out.println("Kondisi CCTV Sesuai");
+        setCCTV(input.next());
+       return 1;
+        
+    }
+    public int aCCTV(){
+         if(getCCTV().equals("Baik")){
+            JOptionPane.showMessageDialog(null,"Kondisi CCTV Sesuai");
             return 1;
             
         }else{
-             System.out.println("Kondisi CCTV Tidak Sesuai");
+             JOptionPane.showMessageDialog(null,"Kondisi CCTV Tidak Sesuai");
         }
         return 0;
-        
     }
     
     
@@ -89,17 +93,20 @@ public class KondisiSarana implements InterfaceSarana{
         input= new Scanner (System.in);
         z.input("kondisi","stop kontak ");
         System.out.println("1.Rusak 2.Baik");
-        setStopKontak(input.nextInt());
-        if(getStopKontak()>1){
-            System.out.println("Kondisi StopKontak Sesuai");
+        setStopKontak(input.next());
+        
+        return 1;
+    }
+      public int aStopKontak(){
+          if(getStopKontak().equals("Baik")){
+            JOptionPane.showMessageDialog(null,"Kondisi StopKontak Sesuai");
             return 1;
             
         }else{
-             System.out.println("Kondisi StopKontak Tidak Sesuai");
+           JOptionPane.showMessageDialog(null,"Kondisi StopKontak Tidak Sesuai");
         }
         return 0;
-        
-    }
+      }
       
     @Override
           public int KabelLCD(){
@@ -107,51 +114,65 @@ public class KondisiSarana implements InterfaceSarana{
         input= new Scanner (System.in);
         System.out.println("Pilih Kondisi Kabel LCD:");
         System.out.println("1.Rusak 2.Baik");
-        setKabelLCD(input.nextInt());
-        if(getKabelLCD()>1){
-            System.out.println("Kondisi Kabel LCD Sesuai");
+        setKabelLCD(input.next());
+        return 1;
+    }
+          public int aKabelLCD(){
+              if(getKabelLCD().equals("Baik")){
+            JOptionPane.showMessageDialog(null,"Kondisi Kabel LCD Sesuai");
             return 1;
             
         }else{
-             System.out.println("Kondisi Kabel LCD Tidak Sesuai");
+             JOptionPane.showMessageDialog(null,"Kondisi Kabel LCD Tidak Sesuai");
         }
         return 0;
         
-    }
+          }
+          
     @Override
             public int KipasAngin(){
             z.input("kondisi","Kipas angin");
         input= new Scanner (System.in);
         System.out.println("Pilih Kondisi KipasAngin:");
         System.out.println("1.Rusak  2.Baik");
-        setKipasAngin(input.nextInt());
-        if(getKipasAngin()>1){
-            System.out.println("Kondisi Kipas Angin Sesuai");
+        setKipasAngin(input.next());
+       return 1;
+        
+    }
+            public int aKipasAngin(){
+                 if(getKipasAngin().equals("Baik")){
+           JOptionPane.showMessageDialog(null,"Kondisi Kipas Angin Sesuai");
             return 1;
             
         }else{
-             System.out.println("Kondisi Kipas Angin Tidak Sesuai");
+             JOptionPane.showMessageDialog(null,"Kondisi Kipas Angin Tidak Sesuai");
         }
         return 0;
-        
-    }
+            }
     @Override
           public int AC(){
               input= new Scanner (System.in);
               z.input("kondisi","AC");
         System.out.println("Pilih Kondisi AC:");
         System.out.println("1.Rusak  2.Baikr");
-        setAC(input.nextInt());
-        if(getAC()>1){
-            System.out.println("Kondisi AC Sesuai");
+        setAC(input.next());
+       return 1;
+              
+          }
+          public int aAC(){
+               if(getAC().equals("Baik")){
+           JOptionPane.showMessageDialog(null,"Kondisi AC Sesuai");
             return 1;
             
         }else{
-             System.out.println("Kondisi AC Tidak Sesuai");
+            JOptionPane.showMessageDialog(null,"Kondisi AC Tidak Sesuai");
         }
         return 0;
-              
           }
+          
+        void Output(){
+            
+        }
     
         void Save(){
         
@@ -194,4 +215,11 @@ public class KondisiSarana implements InterfaceSarana{
 			e.printStackTrace();
 		}
     }
+      void Analisis(){
+         aStopKontak();
+        aCCTV();
+        aKabelLCD();
+       aKipasAngin();
+       aAC();
+      }
 }

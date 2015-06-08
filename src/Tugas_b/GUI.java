@@ -14,9 +14,15 @@ import javax.swing.JOptionPane;
  * @author eL
  */
 public class GUI extends javax.swing.JFrame {
+    
+ 
+    
     Identitasruangkelas id = new Identitasruangkelas();
     Kondisiruangkelas kon_RK = new Kondisiruangkelas();
     Jumlahkondisidanposisisarana jum_KP = new Jumlahkondisidanposisisarana();
+    JumlahSarana a = new JumlahSarana();
+    KondisiSarana b = new KondisiSarana();
+    PosisiSarana c = new PosisiSarana();
     Lingkunganruangkelas LRK = new Lingkunganruangkelas();
     Kebersihanruangkelas keb_RK = new Kebersihanruangkelas();
     Kenyamananruangkelas ken_RK = new Kenyamananruangkelas();
@@ -26,6 +32,18 @@ public class GUI extends javax.swing.JFrame {
    
     public GUI() {
         initComponents();
+        
+        Login.setVisible(true);
+        Identitas.setVisible(false);
+        Kondisi.setVisible(false);
+        Jumlah.setVisible(false);
+        Lingkungan.setVisible(false);
+        Kebersihan.setVisible(false);
+        Kenyamanan.setVisible(false);
+        Keamanan.setVisible(false);
+        Report.setVisible(false);
+        
+                
     }
 
     /**
@@ -52,15 +70,149 @@ public class GUI extends javax.swing.JFrame {
         nama = new javax.swing.JTextField();
         lokasi = new javax.swing.JTextField();
         fakultas = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        b_identitas = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
         Kondisi = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        nama1 = new javax.swing.JTextField();
-        lokasi1 = new javax.swing.JTextField();
-        fakultas1 = new javax.swing.JTextField();
+        panjang_ruang = new javax.swing.JTextField();
+        lebar_kelas = new javax.swing.JTextField();
+        jumlah_jendela = new javax.swing.JTextField();
+        b_kondisi = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jumlah_kursi = new javax.swing.JTextField();
+        jumlah_pintu = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        Jumlah = new javax.swing.JPanel();
+        StopKontak = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        pos_SK = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jum_SK = new javax.swing.JTextField();
+        kon_SK = new javax.swing.JTextField();
+        CCTV = new javax.swing.JPanel();
+        pos_CCTV = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jum_CCTV = new javax.swing.JTextField();
+        kon_CCTV = new javax.swing.JTextField();
+        KipasAngin = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        pos_KA = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jum_KA = new javax.swing.JTextField();
+        kon_KA = new javax.swing.JTextField();
+        AC = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
+        pos_AC = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jum_AC = new javax.swing.JTextField();
+        kon_AC = new javax.swing.JTextField();
+        LCD = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
+        pos_LCD = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jum_LCD = new javax.swing.JTextField();
+        kon_LCD = new javax.swing.JTextField();
+        b_kondisi1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel38 = new javax.swing.JLabel();
+        Lingkungan = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        lantai = new javax.swing.JTextField();
+        dinding = new javax.swing.JTextField();
+        atap = new javax.swing.JTextField();
+        pintu = new javax.swing.JTextField();
+        jendela = new javax.swing.JTextField();
+        b_kondisi2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        Kebersihan = new javax.swing.JPanel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        udara = new javax.swing.JTextField();
+        pencahayaan = new javax.swing.JTextField();
+        kelembapan = new javax.swing.JTextField();
+        suhu = new javax.swing.JTextField();
+        b_kondisi3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        Kenyamanan = new javax.swing.JPanel();
+        b_kondisi4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        aus = new javax.swing.JTextField();
+        bising = new javax.swing.JTextField();
+        bau = new javax.swing.JTextField();
+        bocor = new javax.swing.JTextField();
+        rusak = new javax.swing.JTextField();
+        Keamanan = new javax.swing.JPanel();
+        b_kondisi5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        tingkat = new javax.swing.JTextField();
+        kokoh = new javax.swing.JTextField();
+        kunci = new javax.swing.JTextField();
+        Report = new javax.swing.JPanel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        jLabel67 = new javax.swing.JLabel();
+        jLabel68 = new javax.swing.JLabel();
+        jLabel69 = new javax.swing.JLabel();
+        jLabel70 = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
+        jLabel72 = new javax.swing.JLabel();
+        jLabel73 = new javax.swing.JLabel();
+        KPAA = new javax.swing.JButton();
+        NamaRuang = new javax.swing.JButton();
+        GKB = new javax.swing.JButton();
+        AAC = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        Fakultas = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+        logout = new javax.swing.JButton();
+        input = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 680));
@@ -113,54 +265,606 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 370, 270));
 
         Identitas.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Identitas.setMinimumSize(new java.awt.Dimension(430, 350));
+        Identitas.setPreferredSize(new java.awt.Dimension(430, 350));
         Identitas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setText("Nama Ruangan");
+        jLabel4.setText("Nama Ruang");
         Identitas.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
 
-        jLabel5.setText("Lokasi");
-        Identitas.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 193, -1, -1));
+        jLabel5.setText("Gedung Kuliah Bersama (GKB)");
+        Identitas.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, -1, -1));
 
         jLabel6.setText("Fakultas");
-        Identitas.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 236, -1, -1));
-        Identitas.add(nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 190, -1));
-        Identitas.add(lokasi, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 190, -1));
-        Identitas.add(fakultas, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 190, -1));
+        Identitas.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
+        Identitas.add(nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 50, -1));
+        Identitas.add(lokasi, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 50, -1));
+        Identitas.add(fakultas, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 110, -1));
 
-        jButton1.setText("Next");
+        b_identitas.setText("Next");
+        b_identitas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_identitasActionPerformed(evt);
+            }
+        });
+        Identitas.add(b_identitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, -1, -1));
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel20.setText("Identitas Ruang Kelas");
+        Identitas.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
+
+        getContentPane().add(Identitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 620, 420));
+
+        Kondisi.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Kondisi.setMinimumSize(new java.awt.Dimension(430, 350));
+        Kondisi.setPreferredSize(new java.awt.Dimension(430, 350));
+        Kondisi.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setText("Panjang Ruangan");
+        Kondisi.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
+
+        jLabel8.setText("Lebar Kelas");
+        Kondisi.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, -1, -1));
+
+        jLabel9.setText("Jumlah Kursi");
+        Kondisi.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
+        Kondisi.add(panjang_ruang, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 140, -1));
+        Kondisi.add(lebar_kelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 140, -1));
+        Kondisi.add(jumlah_jendela, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 140, -1));
+
+        b_kondisi.setText("Next");
+        b_kondisi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_kondisiActionPerformed(evt);
+            }
+        });
+        Kondisi.add(b_kondisi, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, -1, -1));
+
+        jLabel10.setText("Jumlah Jendela");
+        Kondisi.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
+
+        jLabel11.setText("Jumlah Pintu");
+        Kondisi.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, -1, -1));
+        Kondisi.add(jumlah_kursi, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 140, -1));
+        Kondisi.add(jumlah_pintu, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 140, -1));
+
+        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel36.setText("Kondisi Ruang Kelas");
+        Kondisi.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, 20));
+
+        jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        Identitas.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, -1, -1));
+        Kondisi.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, -1, -1));
 
-        getContentPane().add(Identitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 620, 420));
+        getContentPane().add(Kondisi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 620, 420));
 
-        Kondisi.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Kondisi.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Jumlah.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Jumlah.setMinimumSize(new java.awt.Dimension(430, 350));
+        Jumlah.setPreferredSize(new java.awt.Dimension(430, 350));
+        Jumlah.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setText("Nama Ruangan");
-        Kondisi.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
+        StopKontak.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        StopKontak.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setText("Lokasi");
-        Kondisi.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 193, -1, -1));
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel12.setText("Stop Kontak");
+        StopKontak.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
 
-        jLabel9.setText("Fakultas");
-        Kondisi.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 236, -1, -1));
-        Kondisi.add(nama1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 190, -1));
-        Kondisi.add(lokasi1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 190, -1));
-        Kondisi.add(fakultas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 190, -1));
+        pos_SK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pos_SKActionPerformed(evt);
+            }
+        });
+        StopKontak.add(pos_SK, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 60, -1));
 
-        jButton2.setText("Next");
+        jLabel17.setText("Posisi");
+        StopKontak.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+
+        jLabel19.setText("Kondisi");
+        StopKontak.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+        jLabel18.setText("Jumlah");
+        StopKontak.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+
+        jum_SK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jum_SKActionPerformed(evt);
+            }
+        });
+        StopKontak.add(jum_SK, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 60, -1));
+
+        kon_SK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kon_SKActionPerformed(evt);
+            }
+        });
+        StopKontak.add(kon_SK, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 60, -1));
+
+        Jumlah.add(StopKontak, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 150, 150));
+
+        CCTV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        CCTV.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        CCTV.add(pos_CCTV, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 60, -1));
+
+        jLabel21.setText("Posisi");
+        CCTV.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+
+        jLabel22.setText("Kondisi");
+        CCTV.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+        jLabel23.setText("Jumlah");
+        CCTV.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel13.setText("CCTV");
+        CCTV.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
+        CCTV.add(jum_CCTV, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 60, -1));
+        CCTV.add(kon_CCTV, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 60, -1));
+
+        Jumlah.add(CCTV, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 150, 150));
+
+        KipasAngin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        KipasAngin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel24.setText("Kipas Angin");
+        KipasAngin.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, -1, -1));
+
+        pos_KA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pos_KAActionPerformed(evt);
+            }
+        });
+        KipasAngin.add(pos_KA, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 60, -1));
+
+        jLabel25.setText("Posisi");
+        KipasAngin.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+
+        jLabel26.setText("Kondisi");
+        KipasAngin.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+        jLabel27.setText("Jumlah");
+        KipasAngin.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel14.setText("Kipas Angin");
+        KipasAngin.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
+
+        jum_KA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jum_KAActionPerformed(evt);
+            }
+        });
+        KipasAngin.add(jum_KA, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 60, -1));
+
+        kon_KA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kon_KAActionPerformed(evt);
+            }
+        });
+        KipasAngin.add(kon_KA, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 60, -1));
+
+        Jumlah.add(KipasAngin, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 160, 150));
+
+        AC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        AC.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel28.setText("AC");
+        AC.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, -1, -1));
+        AC.add(pos_AC, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 60, -1));
+
+        jLabel29.setText("Posisi");
+        AC.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+
+        jLabel30.setText("Kondisi");
+        AC.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+        jLabel31.setText("Jumlah");
+        AC.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel15.setText("AC");
+        AC.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+        AC.add(jum_AC, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 60, -1));
+        AC.add(kon_AC, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 60, -1));
+
+        Jumlah.add(AC, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 150, 150));
+
+        LCD.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        LCD.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel32.setText("Kabel LCD");
+        LCD.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, -1, -1));
+        LCD.add(pos_LCD, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 60, -1));
+
+        jLabel33.setText("Posisi");
+        LCD.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+
+        jLabel34.setText("Kondisi");
+        LCD.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+        jLabel35.setText("Jumlah");
+        LCD.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel16.setText("Kabel LCD");
+        LCD.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
+        LCD.add(jum_LCD, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 60, -1));
+        LCD.add(kon_LCD, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 60, -1));
+
+        Jumlah.add(LCD, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 160, 150));
+
+        b_kondisi1.setText("Next");
+        b_kondisi1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_kondisi1ActionPerformed(evt);
+            }
+        });
+        Jumlah.add(b_kondisi1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, -1, -1));
+
+        jButton2.setText("Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        Kondisi.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, -1, -1));
+        Jumlah.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, -1, -1));
 
-        getContentPane().add(Kondisi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 620, 420));
+        jLabel38.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel38.setText("Jumlah Kondisi dan Posisi Sarana");
+        Jumlah.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
+
+        getContentPane().add(Jumlah, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 620, 420));
+
+        Lingkungan.setMinimumSize(new java.awt.Dimension(430, 350));
+        Lingkungan.setPreferredSize(new java.awt.Dimension(430, 350));
+        Lingkungan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel37.setText("Lingkungan Ruang Kelas");
+        Lingkungan.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
+
+        jLabel39.setText("Kondisi Lantai");
+        Lingkungan.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, -1, -1));
+
+        jLabel40.setText("Kondisi Dinding");
+        Lingkungan.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
+
+        jLabel41.setText("Kondisi Atap");
+        Lingkungan.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, -1));
+
+        jLabel42.setText("Kondisi Pintu");
+        Lingkungan.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, -1, -1));
+
+        jLabel43.setText("Kondisi Jendela");
+        Lingkungan.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
+        Lingkungan.add(lantai, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 100, -1));
+        Lingkungan.add(dinding, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 100, -1));
+        Lingkungan.add(atap, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 100, -1));
+        Lingkungan.add(pintu, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 100, -1));
+        Lingkungan.add(jendela, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 100, -1));
+
+        b_kondisi2.setText("Next");
+        b_kondisi2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_kondisi2ActionPerformed(evt);
+            }
+        });
+        Lingkungan.add(b_kondisi2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, -1, -1));
+
+        jButton3.setText("Back");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        Lingkungan.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, -1, -1));
+
+        getContentPane().add(Lingkungan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 620, 420));
+
+        Kebersihan.setFocusTraversalPolicyProvider(true);
+        Kebersihan.setMinimumSize(new java.awt.Dimension(430, 350));
+        Kebersihan.setPreferredSize(new java.awt.Dimension(430, 350));
+        Kebersihan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel44.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel44.setText("Kebersihan Ruang Kelas");
+        Kebersihan.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, 30));
+
+        jLabel45.setText("Sirkulasi Udara");
+        Kebersihan.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
+
+        jLabel46.setText("Nilai Pencahayaan");
+        Kebersihan.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
+
+        jLabel47.setText("Kelembapan (%)");
+        Kebersihan.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
+
+        jLabel48.setText("Suhu (derajat celcius)");
+        Kebersihan.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, -1, -1));
+        Kebersihan.add(udara, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 80, -1));
+        Kebersihan.add(pencahayaan, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 80, -1));
+        Kebersihan.add(kelembapan, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 80, -1));
+        Kebersihan.add(suhu, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 80, -1));
+
+        b_kondisi3.setText("Next");
+        b_kondisi3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_kondisi3ActionPerformed(evt);
+            }
+        });
+        Kebersihan.add(b_kondisi3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, -1, -1));
+
+        jButton4.setText("Back");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        Kebersihan.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, -1, -1));
+
+        getContentPane().add(Kebersihan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 620, 420));
+
+        Kenyamanan.setMinimumSize(new java.awt.Dimension(430, 350));
+        Kenyamanan.setPreferredSize(new java.awt.Dimension(430, 350));
+        Kenyamanan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        b_kondisi4.setText("Next");
+        b_kondisi4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_kondisi4ActionPerformed(evt);
+            }
+        });
+        Kenyamanan.add(b_kondisi4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, -1, -1));
+
+        jButton5.setText("Back");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        Kenyamanan.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, -1, -1));
+
+        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel49.setText("Kenyamanan Ruang Kelas");
+        Kenyamanan.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
+
+        jLabel51.setText("Keausan");
+        Kenyamanan.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, -1, -1));
+
+        jLabel52.setText("Kebisingan");
+        Kenyamanan.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, -1, -1));
+
+        jLabel53.setText("Bau");
+        Kenyamanan.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, -1, -1));
+
+        jLabel54.setText("Kebocoran");
+        Kenyamanan.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, -1, -1));
+
+        jLabel55.setText("Kerusakan");
+        Kenyamanan.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, -1, -1));
+
+        aus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ausActionPerformed(evt);
+            }
+        });
+        Kenyamanan.add(aus, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 90, -1));
+        Kenyamanan.add(bising, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 90, -1));
+        Kenyamanan.add(bau, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 90, -1));
+        Kenyamanan.add(bocor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 90, -1));
+        Kenyamanan.add(rusak, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 90, -1));
+
+        getContentPane().add(Kenyamanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 620, 420));
+
+        Keamanan.setMinimumSize(new java.awt.Dimension(450, 350));
+        Keamanan.setPreferredSize(new java.awt.Dimension(450, 350));
+        Keamanan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        b_kondisi5.setText("Next");
+        b_kondisi5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_kondisi5ActionPerformed(evt);
+            }
+        });
+        Keamanan.add(b_kondisi5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, -1, -1));
+
+        jButton6.setText("Back");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        Keamanan.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, -1, -1));
+
+        jLabel50.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel50.setText("Keamanan Ruang Kelas");
+        Keamanan.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
+
+        jLabel56.setText("Tingkat Bahaya");
+        Keamanan.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, -1, -1));
+
+        jLabel57.setText("Kekokohan");
+        Keamanan.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, -1, -1));
+
+        jLabel58.setText("Kunci Pintu & Jendela");
+        Keamanan.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, -1, -1));
+        Keamanan.add(tingkat, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 100, -1));
+        Keamanan.add(kokoh, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 100, -1));
+        Keamanan.add(kunci, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 100, -1));
+
+        getContentPane().add(Keamanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 620, 420));
+
+        Report.setMinimumSize(new java.awt.Dimension(450, 800));
+        Report.setPreferredSize(new java.awt.Dimension(450, 800));
+        Report.setRequestFocusEnabled(false);
+        Report.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel59.setText("Nama Ruang");
+        Report.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+
+        jLabel60.setText("Gedung Kuliah Bersama (GKB)");
+        Report.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+
+        jLabel61.setText("Fakultas");
+        Report.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+
+        jLabel62.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel62.setText("Hasil");
+        Report.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, -1, -1));
+
+        jLabel63.setText("Kondisi Ruang Kelas");
+        Report.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
+
+        jLabel64.setText("Jumlah, Kondisi dan Posisi Saran");
+        Report.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+
+        jLabel65.setText("Kabel LCD");
+        Report.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, -1, -1));
+
+        jLabel66.setText("Stop Kontak");
+        Report.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
+
+        jLabel67.setText("CCTV");
+        Report.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
+
+        jLabel68.setText("Kipas Angin");
+        Report.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
+
+        jLabel69.setText("AC");
+        Report.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, -1, -1));
+
+        jLabel70.setText("Kondisi Lingkungan Ruang Kelas");
+        Report.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
+
+        jLabel71.setText("Keamanan Ruang Kelas");
+        Report.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
+
+        jLabel72.setText("Kebersihan Ruang Kelas");
+        Report.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
+
+        jLabel73.setText("Kenyamanan Ruang Kelas");
+        Report.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
+
+        KPAA.setText("Tampil");
+        KPAA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KPAAActionPerformed(evt);
+            }
+        });
+        Report.add(KPAA, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, -1, -1));
+
+        NamaRuang.setText("Tampil");
+        NamaRuang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NamaRuangActionPerformed(evt);
+            }
+        });
+        Report.add(NamaRuang, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, -1, -1));
+
+        GKB.setText("Tampil");
+        GKB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GKBActionPerformed(evt);
+            }
+        });
+        Report.add(GKB, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, -1, -1));
+
+        AAC.setText("Tampil");
+        AAC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AACActionPerformed(evt);
+            }
+        });
+        Report.add(AAC, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, -1, -1));
+
+        jButton11.setText("Tampil");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        Report.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
+
+        jButton12.setText("Tampil");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+        Report.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, -1, -1));
+
+        jButton13.setText("Tampil");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+        Report.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 380, -1, -1));
+
+        Fakultas.setText("Tampil");
+        Fakultas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FakultasActionPerformed(evt);
+            }
+        });
+        Report.add(Fakultas, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, -1, -1));
+
+        jButton15.setText("Tampil");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+        Report.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, -1, -1));
+
+        jButton16.setText("Tampil");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+        Report.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, -1, -1));
+
+        jButton17.setText("Tampil");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+        Report.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, -1, -1));
+
+        jButton18.setText("Tampil");
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+        Report.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, -1, 20));
+
+        logout.setText("Logout");
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
+        Report.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, -1, -1));
+
+        input.setText("Input Ulang");
+        input.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputActionPerformed(evt);
+            }
+        });
+        Report.add(input, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, -1, -1));
+
+        getContentPane().add(Report, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -174,10 +878,13 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_passActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
+       
+       
+       
        String Username = user.getText();
        String Password = pass.getText();
         
-        if (Username.equals("dedi95") || Username.equals("briyananda") && (Password.equals("briyo") || Password.equals("dedi"))){
+        if (Username.equals("dani") || Username.equals("lian") && (Password.equals("654321") || Password.equals("123456"))){
             user.setText("");
             pass.setText("");
             Identitas.setVisible(true);
@@ -197,30 +904,254 @@ public class GUI extends javax.swing.JFrame {
        close();
     }//GEN-LAST:event_cancelActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Identitas.setVisible(rootPaneCheckingEnabled);
-        
-        id.setNamaRuang(Integer.parseInt(nama.getText()));
-        id.setLokasiRuang(Integer.parseInt(lokasi.getText()));
-        id.setFakultas(fakultas.getText());
-        id.Output();
-        id.Save();
-        
-        Kondisi.setVisible(true);
-        Identitas.setVisible(false);
-       
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
     private void close(){
         WindowEvent winClosing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosing);
     }
-    /**
-     * @param args the command line arguments
-     */
+    
+    private void b_identitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_identitasActionPerformed
+        
+        
+        id.setNamaRuang(Integer.parseInt(nama.getText()));
+        id.setLokasiRuang(Integer.parseInt(lokasi.getText()));
+        id.setFakultas(fakultas.getText());
+       
+        id.Save();
+        
+        
+        Login.setVisible(false);
+        Identitas.setVisible(false);
+        Kondisi.setVisible(true);
+        
+    }//GEN-LAST:event_b_identitasActionPerformed
+
+    private void b_kondisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_kondisiActionPerformed
+        
+        
+        kon_RK.setPanjangRuang(Integer.parseInt(panjang_ruang.getText()));
+        kon_RK.setLebarRuang(Integer.parseInt(lebar_kelas.getText()));
+        kon_RK.setJumlahKursi(Integer.parseInt(jumlah_kursi.getText()));
+        kon_RK.setJumlahPintu(Integer.parseInt(jumlah_pintu.getText()));
+      
+        kon_RK.Save();
+        
+        Kondisi.setVisible(false);   
+        Jumlah.setVisible(true);
+    }//GEN-LAST:event_b_kondisiActionPerformed
+        private void ComACActionPerformed(java.awt.event.ActionEvent evt) {                                       
+          JOptionPane.showMessageDialog(null,"Kondisi AC ga Sesuai");     
+      
+    }                                                                 
+    private void pos_KAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pos_KAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pos_KAActionPerformed
+
+    private void jum_KAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jum_KAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jum_KAActionPerformed
+
+    private void kon_KAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kon_KAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kon_KAActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Identitas.setVisible(true);
+        Kondisi.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void b_kondisi1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_kondisi1ActionPerformed
+       
+       a.setStopKontak(Integer.parseInt(jum_SK.getText()));
+       b.setStopKontak(kon_SK.getText());
+      c.setStopKontak(pos_SK.getText());
+      
+      a.setCCTV(Integer.parseInt(jum_CCTV.getText()));
+      b.setCCTV(kon_SK.getText());
+      c.setCCTV(pos_SK.getText());
+       
+       a.setKipasAngin(Integer.parseInt(jum_KA.getText()));
+       b.setKipasAngin(kon_KA.getText());
+    c.setKipasAngin(pos_KA.getText());
+      
+        a.setAC(Integer.parseInt(jum_AC.getText()));
+       b.setAC(kon_AC.getText());
+      c.setAC(pos_AC.getText());
+      
+       a.setKabelLCD(Integer.parseInt(jum_LCD.getText()));
+       b.setKabelLCD(kon_LCD.getText());
+      c.setKabelLCD(pos_LCD.getText());
+      
+
+     
+     a.Save();
+     b.Save();
+     c.Save();
+   
+        Jumlah.setVisible(false);
+        Lingkungan.setVisible(true);
+    }//GEN-LAST:event_b_kondisi1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Kondisi.setVisible(true);
+        Jumlah.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void kon_SKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kon_SKActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kon_SKActionPerformed
+
+    private void jum_SKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jum_SKActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jum_SKActionPerformed
+
+    private void pos_SKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pos_SKActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pos_SKActionPerformed
+
+    private void b_kondisi2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_kondisi2ActionPerformed
+        LRK.setKondisiLantai(lantai.getText());
+        LRK.setKondisiDinding(dinding.getText());
+        LRK.setKondisiAtap(atap.getText());
+        LRK.setKondisiPintu(pintu.getText());
+        LRK.setKondisiJendela(jendela.getText());
+     
+        LRK.Save();
+        
+        Kebersihan.setVisible(true);
+        Lingkungan.setVisible(false);
+    }//GEN-LAST:event_b_kondisi2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Jumlah.setVisible(true);
+        Lingkungan.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void b_kondisi3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_kondisi3ActionPerformed
+       keb_RK.setSirkulasiUdara(udara.getText());
+        keb_RK.setNilaiPencahayaan(Integer.parseInt(pencahayaan.getText()));
+        keb_RK.setKelembapan(Integer.parseInt(kelembapan.getText()));
+        keb_RK.setSuhu(Integer.parseInt(suhu.getText()));
+    
+        keb_RK.Save();
+        
+        Kebersihan.setVisible(false);
+        Kenyamanan.setVisible(true);
+        
+    }//GEN-LAST:event_b_kondisi3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Kebersihan.setVisible(false);
+        Lingkungan.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void b_kondisi4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_kondisi4ActionPerformed
+        ken_RK.setKebisingan(bising.getText());
+      ken_RK.setBau(bau.getText());
+        ken_RK.setKebocoran(bocor.getText());
+        ken_RK.setKerusakan(rusak.getText());
+        ken_RK.setKeausan(aus.getText());
+       
+        ken_RK.Save();
+        
+        Kenyamanan.setVisible(false);
+        Keamanan.setVisible(true);
+    }//GEN-LAST:event_b_kondisi4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        Kebersihan.setVisible(true);
+        Kenyamanan.setVisible(false);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void b_kondisi5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_kondisi5ActionPerformed
+      kea_RK.setKekokohan(kokoh.getText());
+        kea_RK.setKuncipintudanjendela(kunci.getText());
+        kea_RK.setBahaya(tingkat.getText());
+     
+        kea_RK.Save();
+        
+        Report.setVisible(true);
+        Keamanan.setVisible(false);
+        
+    }//GEN-LAST:event_b_kondisi5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        Keamanan.setVisible(false);
+        Kenyamanan.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void ausActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ausActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ausActionPerformed
+
+    private void KPAAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KPAAActionPerformed
+       a.aKipasAngin();
+         b.aKipasAngin();
+      c.aKipasAngin();
+    }//GEN-LAST:event_KPAAActionPerformed
+
+    private void NamaRuangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamaRuangActionPerformed
+       JOptionPane.showMessageDialog(null,"Nama Ruang "+id.getNamaRuang()); 
+    }//GEN-LAST:event_NamaRuangActionPerformed
+
+    private void GKBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GKBActionPerformed
+        JOptionPane.showMessageDialog(null,"Lokasi Ruang "+id.getLokasiRuang());
+    }//GEN-LAST:event_GKBActionPerformed
+
+    private void AACActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AACActionPerformed
+ a.aAC();
+         b.aAC();
+      c.aAC();        // TODO add your handling code here:
+    }//GEN-LAST:event_AACActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+      a.aStopKontak();
+      b.aStopKontak();
+      c.aStopKontak();
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        a.aCCTV();
+         b.aCCTV();
+      c.aCCTV();
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+       kea_RK.Analisis();
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void FakultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FakultasActionPerformed
+        JOptionPane.showMessageDialog(null,"Fakultas "+id.getFakultas());
+    }//GEN-LAST:event_FakultasActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+ a.aKabelLCD();
+         b.aKabelLCD();
+      c.aKabelLCD();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        LRK.Analisis();
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+       keb_RK.Analisis();
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        ken_RK.Analisis();
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void inputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputActionPerformed
+        Identitas.setVisible(true);
+        Report.setVisible(false);
+    }//GEN-LAST:event_inputActionPerformed
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        Report.setVisible(false);
+        Login.setVisible(true);
+    }//GEN-LAST:event_logoutActionPerformed
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -254,29 +1185,163 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AAC;
+    private javax.swing.JPanel AC;
+    private javax.swing.JPanel CCTV;
+    private javax.swing.JButton Fakultas;
+    private javax.swing.JButton GKB;
     private javax.swing.JPanel Identitas;
+    private javax.swing.JPanel Jumlah;
+    private javax.swing.JButton KPAA;
+    private javax.swing.JPanel Keamanan;
+    private javax.swing.JPanel Kebersihan;
+    private javax.swing.JPanel Kenyamanan;
+    private javax.swing.JPanel KipasAngin;
     private javax.swing.JPanel Kondisi;
+    private javax.swing.JPanel LCD;
+    private javax.swing.JPanel Lingkungan;
     private javax.swing.JPanel Login;
+    private javax.swing.JButton NamaRuang;
+    private javax.swing.JPanel Report;
+    private javax.swing.JPanel StopKontak;
+    private javax.swing.JTextField atap;
+    private javax.swing.JTextField aus;
+    private javax.swing.JButton b_identitas;
+    private javax.swing.JButton b_kondisi;
+    private javax.swing.JButton b_kondisi1;
+    private javax.swing.JButton b_kondisi2;
+    private javax.swing.JButton b_kondisi3;
+    private javax.swing.JButton b_kondisi4;
+    private javax.swing.JButton b_kondisi5;
+    private javax.swing.JTextField bau;
+    private javax.swing.JTextField bising;
+    private javax.swing.JTextField bocor;
     private javax.swing.JButton cancel;
+    private javax.swing.JTextField dinding;
     private javax.swing.JTextField fakultas;
-    private javax.swing.JTextField fakultas1;
+    private javax.swing.JButton input;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField jendela;
+    private javax.swing.JTextField jum_AC;
+    private javax.swing.JTextField jum_CCTV;
+    private javax.swing.JTextField jum_KA;
+    private javax.swing.JTextField jum_LCD;
+    private javax.swing.JTextField jum_SK;
+    private javax.swing.JTextField jumlah_jendela;
+    private javax.swing.JTextField jumlah_kursi;
+    private javax.swing.JTextField jumlah_pintu;
+    private javax.swing.JTextField kelembapan;
+    private javax.swing.JTextField kokoh;
+    private javax.swing.JTextField kon_AC;
+    private javax.swing.JTextField kon_CCTV;
+    private javax.swing.JTextField kon_KA;
+    private javax.swing.JTextField kon_LCD;
+    private javax.swing.JTextField kon_SK;
+    private javax.swing.JTextField kunci;
+    private javax.swing.JTextField lantai;
+    private javax.swing.JTextField lebar_kelas;
+    private javax.swing.JButton logout;
     private javax.swing.JTextField lokasi;
-    private javax.swing.JTextField lokasi1;
     private javax.swing.JTextField nama;
-    private javax.swing.JTextField nama1;
+    private javax.swing.JTextField panjang_ruang;
     private javax.swing.JPasswordField pass;
+    private javax.swing.JTextField pencahayaan;
+    private javax.swing.JTextField pintu;
+    private javax.swing.JTextField pos_AC;
+    private javax.swing.JTextField pos_CCTV;
+    private javax.swing.JTextField pos_KA;
+    private javax.swing.JTextField pos_LCD;
+    private javax.swing.JTextField pos_SK;
+    private javax.swing.JTextField rusak;
     private javax.swing.JButton submit;
+    private javax.swing.JTextField suhu;
+    private javax.swing.JTextField tingkat;
+    private javax.swing.JTextField udara;
     private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
 }

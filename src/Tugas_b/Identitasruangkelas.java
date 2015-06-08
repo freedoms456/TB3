@@ -15,7 +15,7 @@ import java.util.Scanner;
  * @author eL
  */
 public class Identitasruangkelas extends kelasabstrak{
-    Scanner input;
+ Scanner input;
  int NamaRuang;
 
     public int getNamaRuang() {

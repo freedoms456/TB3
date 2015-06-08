@@ -13,6 +13,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,92 +22,124 @@ import java.io.ObjectOutputStream;
 public class Kenyamananruangkelas {
     Scanner input;
    
-    int Kebisingan;
-       int Bau;
-       int Kebocoran;
-       int Kerusakan;
-       int Keausan;
+    String Kebisingan;
+       String Bau;
+       String Kebocoran;
+       String Kerusakan;
+       String Keausan;
 
-    public int getKebisingan() {
+    public String getKebisingan() {
         return Kebisingan;
     }
 
-    public void setKebisingan(int Kebisingan) {
+    public void setKebisingan(String Kebisingan) {
         this.Kebisingan = Kebisingan;
     }
 
-    public int getBau() {
+    public String getBau() {
         return Bau;
     }
 
-    public void setBau(int Bau) {
+    public void setBau(String Bau) {
         this.Bau = Bau;
     }
 
-    public int getKebocoran() {
+    public String getKebocoran() {
         return Kebocoran;
     }
 
-    public void setKebocoran(int Kebocoran) {
+    public void setKebocoran(String Kebocoran) {
         this.Kebocoran = Kebocoran;
     }
 
-    public int getKerusakan() {
+    public String getKerusakan() {
         return Kerusakan;
     }
 
-    public void setKerusakan(int Kerusakan) {
+    public void setKerusakan(String Kerusakan) {
         this.Kerusakan = Kerusakan;
     }
 
-    public int getKeausan() {
+    public String getKeausan() {
         return Keausan;
     }
 
-    public void setKeausan(int Keausan) {
+    public void setKeausan(String Keausan) {
         this.Keausan = Keausan;
     }
 
-    public int getHasilKenyamanan() {
+    public String getHasilKenyamanan() {
         return HasilKenyamanan;
     }
 
-    public void setHasilKenyamanan(int HasilKenyamanan) {
+    public void setHasilKenyamanan(String HasilKenyamanan) {
         this.HasilKenyamanan = HasilKenyamanan;
     }
-       int HasilKenyamanan;
+       String HasilKenyamanan;
        
        
                
     
     void Input(){
         input= new Scanner (System.in);
-        System.out.println("pilih Kebisingan: 1.Ribut 2.Tenang");
-        setKebisingan(input.nextInt())  ;
-        System.out.println("pilih Tingkat Kebauan: 1.Bau 2.Netral 3.Wangi");
-        setBau(input.nextInt())  ;
-        System.out.println("pilih Kebocoran : 1.parah 2.sedikit 3.tidak bocor");
-        setKebocoran(input.nextInt())  ;
-        System.out.println("pilih Kerusakan : 1.Rusak 2.tidak Rusak");
-        setKerusakan(input.nextInt())  ;
-        System.out.println("pilih Keausan : 1.Aus 2.tidak Aus");
-        setKeausan(input.nextInt())  ;
+        System.out.println("Input Kebisingan: 1.Ribut 2.Tenang");
+        setKebisingan(input.next())  ;
+        System.out.println("Input Tingkat Kebauan: 1.Bau 2.Netral 3.Wangi");
+        setBau(input.next())  ;
+        System.out.println("Input Kebocoran : 1.parah 2.sedikit 3.tidak bocor");
+        setKebocoran(input.next())  ;
+        System.out.println("Input Kerusakan : 1.Rusak 2.tidak Rusak");
+        setKerusakan(input.next())  ;
+        System.out.println("Input Keausan : 1.Aus 2.tidak Aus");
+        setKeausan(input.next())  ;
     }
     int Analisis(){
-        setHasilKenyamanan( getKebisingan()+ getBau()+ getKebocoran()+ getKerusakan() +  getKeausan());
-        if( getHasilKenyamanan()>9){
-        System.out.println("Kenyamanan kelas yang Baik");
-        return 1;
+         if(getKebisingan().equals("Sunyi")){
+             JOptionPane.showMessageDialog(null,"Kebisingan  Sesuai");
+             
+            
         }
         else{
-        System.out.println("Kenyamanankelas yang Buruk");
+           JOptionPane.showMessageDialog(null,"Kebisisngan Tidak Sesuai"); 
         }
-        return 0;
+          if(getBau().equals("Wangi")){
+             JOptionPane.showMessageDialog(null,"Kebauan  Sesuai");
+             
+            
+        }
+        else{
+           JOptionPane.showMessageDialog(null,"Kebauan Tidak Sesuai"); 
+        }
+           if(getKebocoran().equals("tidak ada")){
+             JOptionPane.showMessageDialog(null,"Kebocoran sesuai");
+             
+            
+        }
+        else{
+           JOptionPane.showMessageDialog(null,"Kebocoran Tidak Sesuai"); 
+        }
+            if(getKerusakan().equals("Tidak ada")){
+             JOptionPane.showMessageDialog(null,"Kerusakan Sesuai");
+             
+            
+        }
+        else{
+           JOptionPane.showMessageDialog(null,"Kerusakan Tidak Sesuai"); 
+        }
+             if(getKeausan().equals("tidak ada")){
+             JOptionPane.showMessageDialog(null,"Keausan  Sesuai");
+             
+            
+        }
+        else{
+           JOptionPane.showMessageDialog(null,"Keausan Tidak Sesuai"); 
+        }
+             return 1;
     }
   
     public void Output(){
         
-        System.out.println("Memiliki : ");
+     
         Analisis();
         
     }
@@ -117,7 +150,7 @@ public class Kenyamananruangkelas {
                    
     
 			ObjectOutputStream a = new ObjectOutputStream(new FileOutputStream(namafile));
-			a.writeObject("kenyamanan =  "+Analisis());
+			
                         a.writeObject("Kebisingan =  "+getKebisingan());
                         a.writeObject("Bau =  "+getBau());
                         a.writeObject("Kebocoran =  "+getKebocoran());

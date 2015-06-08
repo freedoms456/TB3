@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Jumlahkondisidanposisisarana {
     Scanner input;
     JumlahSarana a = new JumlahSarana();
-    KondisiSarana b=new KondisiSarana();
+    KondisiSarana b = new KondisiSarana();
     PosisiSarana c = new PosisiSarana();
     int BandWidth;
     int SSID;
@@ -35,9 +35,12 @@ public class Jumlahkondisidanposisisarana {
     public void setSSID(int SSID) {
         this.SSID = SSID;
     }
+     
+    
     
     public int AnalisisSarana(){
         input= new Scanner (System.in);
+        
         a.StopKontak();
         a.CCTV();
         a.KabelLCD();
@@ -77,7 +80,15 @@ public class Jumlahkondisidanposisisarana {
         
     }
     
-    
+    void Go(){
+         a.aStopKontak();
+        a.aCCTV();
+        a.aKabelLCD();
+        a.aKipasAngin();
+        a.aAC();
+        
+        
+    }
 
 
     

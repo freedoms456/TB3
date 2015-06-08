@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,63 +22,80 @@ import java.util.Scanner;
 public class Keamananruangkelas extends kelasabstrak{
     Scanner input;
   
-    int Kekokohan;
-       int Kuncipintudanjendela;
-       int Bahaya;
-int HasilKeamanan;
-    public int getKekokohan() {
+    String Kekokohan;
+    String Kuncipintudanjendela;
+    String Bahaya;
+    String HasilKeamanan;
+    public String getKekokohan() {
         return Kekokohan;
     }
 
-    public void setKekokohan(int Kekokohan) {
+    public void setKekokohan(String Kekokohan) {
         this.Kekokohan = Kekokohan;
     }
 
-    public int getKuncipintudanjendela() {
+    public String getKuncipintudanjendela() {
         return Kuncipintudanjendela;
     }
 
-    public int getHasilKeamanan() {
+    public String getHasilKeamanan() {
         return HasilKeamanan;
     }
 
-    public void setHasilKeamanan(int HasilKeamanan) {
+    public void setHasilKeamanan(String HasilKeamanan) {
         this.HasilKeamanan = HasilKeamanan;
     }
 
-    public void setKuncipintudanjendela(int Kuncipintudanjendela) {
+    public void setKuncipintudanjendela(String Kuncipintudanjendela) {
         this.Kuncipintudanjendela = Kuncipintudanjendela;
     }
 
-    public int getBahaya() {
+    public String getBahaya() {
         return Bahaya;
     }
 
-    public void setBahaya(int Bahaya) {
+    public void setBahaya(String Bahaya) {
         this.Bahaya = Bahaya;
     }
        
     void Input(){
         input= new Scanner (System.in);
-        System.out.println("pilih Kekokohan: 1.lapuk 2.Sedang 3.Baik");
-         setKekokohan(input.nextInt())  ;
-        System.out.println("pilih Kunci Pintu dan Jendela: 1.Rusak 2.Baik");
-         setKuncipintudanjendela(input.nextInt())  ;
-        System.out.println("pilih Tingkat Bahaya : 1.Berbahaya 2.Waspada 3.Aman");
-         setBahaya(input.nextInt())  ;
+        System.out.println("Input Kekokohan: 1.lapuk 2.Sedang 3.Baik");
+        setKekokohan(input.next())  ;
+        System.out.println("Input Kunci Pintu dan Jendela: 1.Rusak 2.Baik");
+        setKuncipintudanjendela(input.next())  ;
+        System.out.println("Input Tingkat Bahaya : 1.Berbahaya 2.Waspada 3.Aman");
+        setBahaya(input.next())  ;
     }
     int Analisis(){
-         setHasilKeamanan( getKekokohan()+ getKuncipintudanjendela()+ getBahaya());
-        if(  getHasilKeamanan()>6){
-        System.out.println("Keamanan kelas yang baik");   
+          if(getKekokohan().equals("Kokoh")){
+             JOptionPane.showMessageDialog(null,"Kekokohan Sesuai");
+             
+            
         }
         else{
-        System.out.println("Keamanan kelas yang buruk");
-        }   
-        return 0;
+           JOptionPane.showMessageDialog(null,"Kekokohan Tidak Sesuai"); 
+        }
+          if(getKuncipintudanjendela().equals("Ada")){
+             JOptionPane.showMessageDialog(null,"Kunci Sesuai");
+             
+            
+        }
+        else{
+           JOptionPane.showMessageDialog(null,"Kunci Tidak Sesuai"); 
+        }
+          if(getBahaya().equals("Aman")){
+             JOptionPane.showMessageDialog(null,"Ruang Aman");
+             
+            
+        }
+        else{
+           JOptionPane.showMessageDialog(null,"Ruang Aman"); 
+        }
+          return 1;
     }
     void Output(){
-        System.out.println("Kelasi ini memiliki");
+      
         Analisis();
     }
     
