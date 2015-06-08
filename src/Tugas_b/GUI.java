@@ -1149,6 +1149,7 @@ public class GUI extends javax.swing.JFrame {
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         Report.setVisible(false);
         Login.setVisible(true);
+        
     }//GEN-LAST:event_logoutActionPerformed
     
     
